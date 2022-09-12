@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Publication--ciu-zhang-2022</title>
+<link href="../css/custom.css" rel='stylesheet' type='text/css' />
+<link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- web-fonts -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="../js/responsiveslides.min.js"></script>
+	<script>
+		$(function () {
+		  $("#slider").responsiveSlides({
+			auto: true,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			pager: true,
+		  });
+		});
+	</script>
+	<script type="text/javascript" src="../js/move-top.js"></script>
+<script type="text/javascript" src="../js/easing.js"></script>
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+</head>
+
+
+
+<body >
+	<!-- header-section-starts-here -->
+	<div class="header" >
+		
+		<div class="header-bottom">
+			<div class="logo text-center" >
+				<img src="../images/Polaris.png" class="logo1_width" />
+				<img src="../images/xgs_logo.png" class="logo2_width"/>
+			</div>
+			<div class="navigation">
+				<nav class="navbar navbar-default" role="navigation">
+		   <div class="wrap">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+			</div>
+			<!--/.navbar-header-->
+		
+			<div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1" style="text-align: center;margin-left: 12%">
+				<ul class="nav navbar-nav text-center" style="text-align: center;">
+					 <li ><a href="../index.html">主页</a></li>
+						<li><a href="#">新闻</a></li>
+				    <li><a  href="../faculty.html">研究团队</a></li>
+					<li><a class="active"  href="../publications.html">学术论文</a></li>
+					<li><a  href="../patents.html">发明专利</a></li>
+					<li><a href="../competition.html">学术竞赛</a></li>
+					  
+					<li><a href="../contact.html">联系我们</a></li>
+					<div class="clearfix"></div>
+				</ul>
+
+				</div>
+			</div>
+			<!--/.navbar-collapse-->
+	 <!--/.navbar-->
+			</div>
+		</nav>
+		</div>
+	</div>
+	<!-- header-section-ends-here -->
+
+
+
+    
+	<!-- content-section-starts-here -->
+	<div class="main-body" style="width: 80%; margin-left: 14%">
+		<div class="wrap">
+			<div class="col-md-10 ">
+				<div class="page__inner-wrap">
+
+<header>
+<h1 class="page__title" itemprop="headline">SAPS: Self-Attentive Pathway Search for weakly-supervised action localization with background-action augmentation</h1>
+
+
+<p> 
+<strong><i>Computer Vision and Image Understanding. (CVIU)</i></strong> 
+2021.07.24,
+</p>
+<p><a href="../faculty_tc/zhangxiaoyu.html">Xiao-Yu Zhang*</a>, <a href="../faculty_sd/zhangyaru.html">Yaru Zhang</a>, <a href="../faculty_tc/shihaichao.html">Haichao Shi</a>, Jing Dong.</p> 
+</header>
+
+<div class="plink">
+              <a href="https://www.sciencedirect.com/science/article/pii/S1077314221001004" >[PDF]</a>
+              <a href="https://doi.org/10.1016/j.cviu.2021.103256" >[DOI]</a>
+              <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:0juIYldDXZcJ:scholar.google.com/&output=citation&scisdr=CgVSNXP2ELDJmInwZtE:AAGBfm0AAAAAYx72ftEDuw4Ib-RekRPDXY7ZIwZCG-wh&scisig=AAGBfm0AAAAAYx72fi8KXhmJokrlKYO1v-upafY-YTVX&scisf=4&ct=citation&cd=-1&hl=zh-CN" >[Bib] </a>
+            
+              </div>
+            </div>
+
+
+<section class="page__content">
+<h3 id="abstract">Abstract</h3>
+
+<p>Weakly supervised temporal action localization is a challenging computer vision task, which aims to derive frame-level action identifier based on video-level supervision. Attention mechanism is a widely used paradigm for action recognition and localization in most recent methods. However, existing attention-based methods mostly focus on capturing the global dependency of the frame sequence regardless of the local inter-frame distances. Moreover, during background modeling, different background contents are typically classified into one category, which inevitably jeopardizes the discriminative ability of classifiers and brings about irrelevant noise. In this paper, we present a novel self-attentive pathway search framework, namely SAPS, to address the above challenges. To achieve comprehensive representation with discriminative attention weights, we design a NAS-based attentive module with a path-level searching process, and construct a competitive attention structure revealing both local and global dependency. Furthermore, we propose the action-related background modeling for robust background-action augmentation, where knowledge derived from background can provide informative clues for action recognition. An ensemble T-CAM operation is subsequently designed to incorporate background information to further refine the temporal action localization results. Extensive experiments on two benchmark datasets (i.e., THUMOS14 and ActivityNet1.2) have clearly corroborated the efficacy of our method.</p>
+
+</section>
+
+</div>
+
+
+		</div>
+
+
+					
+			
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- content-section-ends-here -->
+	<!-- footer-section-starts-here -->
+	<div class="footer">
+		<div class="footer-bottom">
+			<div class="wrap">
+				<div class="footer-social-icons col-md-6">
+					<ul>
+						<li><a class="facebook" href="#"></a></li>
+						<li><a class="twitter" href="#"></a></li>
+						<li><a class="flickr" href="#"></a></li>
+						<li><a class="googleplus" href="#"></a></li>
+						<li><a class="dribbble" href="#"></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- footer-section-ends-here -->
+	<script type="text/javascript">
+
+
+		$(document).ready(function() {			
+		$().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
+
+
+
+
+<a href="#to-top" id="toTop" > <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!---->
+
+
+</body>
+</html>
