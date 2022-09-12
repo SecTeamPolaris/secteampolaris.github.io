@@ -1,0 +1,189 @@
+.label-info {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 11.844px;
+  font-weight: bold;
+  line-height: 14px;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #3a87ad;
+}
+
+.p-news {
+  font-family: Microsoft YaHei; 
+  font-size: 120%;
+  margin-top: 5%;
+  
+
+}
+
+
+.i-fixed {
+  position: fixed;
+  top: 40%;
+  left: 5%;
+}
+
+.i-pu-left {
+  width: 100%;
+  float: left;
+}
+
+.i-pu-left .i-pu-year-box {
+  border-left: 5px solid #999;
+
+  font-size: 120%;
+  font-weight: bolder;
+  line-height: 130%;
+}
+
+.i-pu-left .i-pu-year-box .check {
+  border-left: 100% ;
+}
+
+.i-pu-left .i-pu-year-box .i-pu-year {
+  margin: 1% 0;
+  box-sizing: border-box;
+  border-left: 10px solid rgba(0,0,0,0);
+}
+
+.i-pu-left .i-pu-year-box a {
+  font-size: 130% ;
+  color: #666;
+  font-family: Microsoft YaHei;
+}
+
+
+.page__title {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  line-height: 110%;
+}
+
+.page__content{
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2%;
+}
+
+.page__content p {
+  line-height: 150%;
+  color: #494e52;
+  font-size: 120%;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
+  margin-bottom: 3%;
+}
+
+
+.bibtex {
+  margin-left: 40px;
+  font-family: courier, sans-serif;
+  padding: 5px;
+  line-height: 20px;
+}
+
+.i-au-left {
+  float: left;
+  width: 100%;
+}
+
+.i-au-left .pic-box {
+  width: 100%;
+  text-align: left;
+}
+
+.i-au-left .pic-box .i-au-name {
+  color: black;
+  font-size: 250%;
+  font-weight: bolder;
+
+  line-height: 150%;
+}
+
+.i-au-left .pic-box .i-au-info {
+
+  font-size: 100%;
+  
+  line-height: 150%;
+}
+
+.i-au-left .pic-box .i-au-pic {
+  margin-top: 20%;
+  width: 100%;
+  line-height: 150%;
+}
+
+.faculty_div p {
+  font-size: 120%;
+  font-family: Microsoft YaHei;
+  line-height: 170%;
+  color: #666;
+}
+
+.student-item {
+  background-color: #FFF;
+}
+
+.student-item {
+  width: 100%;
+  height: 240px;
+  height: 2.4rem;
+  padding: 10px;
+  padding: 0.1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+}
+
+.student-item .pic-box {
+  width: 170px;
+  width: 1.7rem;
+  height: 170px;
+  height: 1.7rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.student-item .name-box {
+  font-size: 16px;
+  font-size: 0.16rem;
+}
+
+.student-item .name-box {
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+  font-size: 0.18rem;
+  padding: 10px 0;
+  padding: 0.1rem 0;
+}
+
+.contact_p{
+  font-size: 130%;
+  font-family: Microsoft YaHei;
+  line-height: 150%;
+  color: #666;
+}
+
+.article_last{
+  margin-top: 3.5em;
+  padding-bottom: 3em;
+}
+
+.logo1_width{
+  width: 8%;
+}
+
+.logo2_width{
+  width: 30%;
+}
