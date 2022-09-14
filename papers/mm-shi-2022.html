@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Publication--tip-shi-2022</title>
+<title>Publication--mm-shi-2022</title>
 <link href="../css/custom.css" rel='stylesheet' type='text/css' />
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -11,8 +11,7 @@
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Express News Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- for bootstrap working -->
 	<script type="text/javascript" src="../js/bootstrap.js"></script>
@@ -103,20 +102,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="page__inner-wrap">
 
 <header>
-<h1 class="page__title" itemprop="headline">Action Shuffling for Weakly Supervised Temporal Localization</h1>
+<h1 class="page__title" itemprop="headline">Dynamic Graph Modeling for Weakly-Supervised Temporal Action Localization</h1>
 
 
 <p> 
-<strong><i>IEEE Transactions on Image Processing. (TIP)</i></strong> 
-2022.06.13,
+<strong><i>ACM MM 2022</i></strong> 
+2022.06.30,
 </p>
-<p><a href=" ../faculty_tc/zhangxiaoyu.html">Xiao-Yu Zhang</a>, <a href=" ../faculty_tc/shihaichao.html">Haichao Shi</a>*, Changsheng Li and Xinchu Shi .</p>
+<p><a href=" ../faculty_tc/shihaichao.html">Haichao Shi</a>, <a href=" ../faculty_tc/zhangxiaoyu.html">Xiao-Yu Zhang*</a>, Changsheng Li, Lixing Gong, Yong Li, Yongjun Bao.</p>
 </header>
 
 <div class="plink">
-              <a href="https://ieeexplore.ieee.org/document/9810114/" >[PDF]</a>
-              <a href="10.1109/TIP.2022.3185485" >[DOI]</a>
-              <a href="https://ieeexplore.ieee.org/document/9810114/" >[Bib] </a>
+              <a href="https://doi.org/10.1145/3503161.3548077" >[PDF]</a>
+              <a href="https://doi.org/10.1145/3503161.3548077" >[DOI]</a>
+              <a href="https://doi.org/10.1145/3503161.3548077" >[Bib] </a>
             
               </div>
             </div>
@@ -125,7 +124,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <section class="page__content">
 <h3 id="abstract">Abstract</h3>
 
-<p>Weakly supervised action localization is a challenging task with extensive applications, which aims to identify actions and the corresponding temporal intervals with only video-level annotations available. This paper analyzes the ordersensitive and location-insensitive properties of actions, and embodies them into a self-augmented learning framework to improve the weakly supervised action localization performance. To be specific, we propose a novel two-branch network architecture with intra/inter-action shuffling, referred to as ActShufNet. The intra-action shuffling branch lays out a self-supervised order prediction task to augment the video representation with inner-video relevance, whereas the inter-action shuffling branch imposes a reorganizing strategy on the existing action contents to augment the training set without resorting to any external resources. Furthermore, the global-local adversarial training is presented to enhance the model’s robustness to irrelevant noises. Extensive experiments are conducted on three benchmark datasets, and the results clearly demonstrate the efficacy of the proposed method.</p>
+<p>Weakly supervised action localization is a challenging task that aims to localize action instances in untrimmed videos given only video-level supervision. Existing methods mostly distinguish action from background via attentive feature fusion with RGB and optical flow modalities. Unfortunately, this strategy fails to retain the distinct characteristics of each modality, leading to inaccurate localization under hard-to-discriminate cases such as action-context interference and in-action stationary period. As an action is typically comprised of multiple stages, an intuitive solution is to model the relation between the finer-grained action segments to obtain a more detailed analysis. In this paper, we propose a dynamic graph-based method, namely DGCNN, to explore the two-stream relation between action segments. To be specific, segments within a video which are likely to be actions are dynamically selected to construct an action graph. For each graph, a triplet adjacency matrix is devised to explore the temporal and contextual correlations between the pseudo action segments, which consists of three components, i.e., mutual importance, feature similarity, and high-level contextual similarity. The two-stream dynamic pseudo graphs, along with the pseudo background segments, are used to derive more detailed video representation. For action localization, a non-local based temporal refinement module is proposed to fully leverage the temporal consistency between consecutive segments. Experimental results on three datasets, i.e., THUMOS14, ActivityNet v1.2 and v1.3, demonstrate that our method is superior to the state-of-the-arts.</p>
 
 </section>
 
