@@ -1408,8 +1408,8 @@ div#myTabContent {
     list-style: none;
     background-color: #FCFCFC;
     border-radius: 0;
-	margin-bottom: 3em;
-	margin-top: 2em;
+	margin-bottom: 0;
+	margin-top: 0;
 }
 .breadcrumb > li a {
     color: #84754E;
