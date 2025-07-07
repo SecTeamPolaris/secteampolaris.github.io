@@ -14,84 +14,132 @@
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- for bootstrap working -->
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
 <!-- web-fonts -->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 <script src="js/responsiveslides.min.js"></script>
-	<script>
-		$(function () {
-		  $("#slider").responsiveSlides({
-			auto: true,
-			nav: true,
-			speed: 500,
-			namespace: "callbacks",
-			pager: true,
-		  });
-		});
-	</script>
-	<script type="text/javascript" src="js/move-top.js"></script>
+    <script>
+        $(function () {
+          $("#slider").responsiveSlides({
+            auto: true,
+            nav: true,
+            speed: 500,
+            namespace: "callbacks",
+            pager: true,
+          });
+        });
+    </script>
+    <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <!--/script-->
 <script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
-				});
-			});
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event){        
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+                });
+            });
 </script>
+<style>
+    .honor-star-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 15px;
+    }
+    .honor-star-item {
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .honor-star-item:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transform: translateY(-2px);
+    }
+    .honor-star-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    .honor-star-comment {
+        margin-top: 10px;
+        line-height: 1.6;
+    }
+    .collapse-button {
+        cursor: pointer;
+        color: #007BFF;
+        text-decoration: underline;
+        display: inline-block;
+        margin-top: 8px;
+    }
+    .hidden-comment {
+        display: none;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid #eee;
+    }
+    .quarter-container {
+        margin-bottom: 30px;
+    }
+    .quarter-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #ddd;
+        color: #555;
+    }
+</style>
 </head>
 
+<body>
+    <!-- header-section-starts-here -->
+    <div class="header" >
+        
+        <div class="header-bottom">
+            <div class="logo text-center" >
+                <img src="images/Polaris.png" class="logo1_width" />
+                <img src="images/xgs_logo.png" class="logo2_width"/>
+            </div>
+            <div class="navigation">
+                <nav class="navbar navbar-default" role="navigation">
+           <div class="wrap">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            </div>
+            <!--/.navbar-header-->
+        
+            <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1" style="text-align: center;margin-left: 12%">
+                <ul class="nav navbar-nav text-center" style="text-align: center;">
+                     <li ><a href="index.html">主页</a></li>
+                    
+                    <li><a  href="faculty.html">研究团队</a></li>
+                    <li><a  href="publications.html">学术论文</a></li>
+                    <li><a  href="patents.html">发明专利</a></li>
+                    <li><a href="competition.html">学术竞赛</a></li>
+                      <li><a  href="project.html">项目成果</a></li>
+                    <li><a class="active"  href="publications.html">团队建设</a></li> 
+                    <li><a href="contact.html">联系我们</a></li>
+                    <div class="clearfix"></div>
+                </ul>
 
-
-<body >
-	<!-- header-section-starts-here -->
-	<div class="header" >
-		
-		<div class="header-bottom">
-			<div class="logo text-center" >
-				<img src="images/Polaris.png" class="logo1_width" />
-				<img src="images/xgs_logo.png" class="logo2_width"/>
-			</div>
-			<div class="navigation">
-				<nav class="navbar navbar-default" role="navigation">
-		   <div class="wrap">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				
-			</div>
-			<!--/.navbar-header-->
-		
-			<div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1" style="text-align: center;margin-left: 12%">
-				<ul class="nav navbar-nav text-center" style="text-align: center;">
-					 <li ><a href="index.html">主页</a></li>
-					
-				    <li><a  href="faculty.html">研究团队</a></li>
-					<li><a  href="publications.html">学术论文</a></li>
-					<li><a  href="patents.html">发明专利</a></li>
-					<li><a href="competition.html">学术竞赛</a></li>
-					  <li><a  href="project.html">项目成果</a></li>
-					<li><a class="active"  href="publications.html">团队建设</a></li> 
-					<li><a href="contact.html">联系我们</a></li>
-					<div class="clearfix"></div>
-				</ul>
-
-				</div>
-			</div>
-			<!--/.navbar-collapse-->
-	 <!--/.navbar-->
-			</div>
-		</nav>
-		</div>
-	</div>
-	<!-- header-section-ends-here -->
+                </div>
+            </div>
+            <!--/.navbar-collapse-->
+     <!--/.navbar-->
+            </div>
+        </nav>
+        </div>
+    </div>
+    <!-- header-section-ends-here -->
 
 
 <div class="i-pu-left i-fixed">
@@ -102,473 +150,511 @@
                             <div class="i-pu-year check">
                                 <a href="#荣誉之星">&nbsp;荣誉之星</a>
                             </div>
-
-
                     </div>
-
                 </div>
     
-	<!-- content-section-starts-here -->
-	<div class="main-body" style="width: 80%; margin-left: 14%">
-		<div class="wrap">
-			<div class="col-md-10 ">
-			
-
-
-
-
-				<div class="articles">
-					<header>
-						<h3 id="团建活动" class="title-head">团队日常</h3>
-					</header>
-					<div class="article_last">
-						<div class="article-left" style="width: 50%;margin-left:0%">
-							<img src="images/Polaris_title.png">
-							<img src="images/Annual_meeting20240127.jpg">
-						</div>
-						<div class="article-right">
-							
-							<div class="article-text" style="font-size: 120%;">
-
-
-									<p class="contact_p">研究方向和内容规划瞄准国家战略，面向领域亟需，紧扣行业热点。以现实任务为驱动，采用三元培养模式--战略、工程、技术三位一体的网安新工科人才培养模式，以综合能力为评价标准，培养具有战略视野高度、重大工程规划和前沿技术创新能力的专业型与综合型网络安全人才。</p>
-										<br>
-				
-										<p class="contact_p">根据培养目标和方向，可为团队成员提供丰富的基础资源与研究条件，有机会与领域战略科学家包括院士深度交流并接受指导培养，深度参与国家级重大工程与科研项目，参与国际顶级学术交流会议、国家与行业的学术会议。</p>
-										<br>
-				
-										<p class="contact_p">面向网络安全领域和行业亟需，加强学术界与工业界的交流，为学生提供优秀的学习环境与培养机会，与360、奇安信、安天等安全企业紧密联系，与国家重要应用出口部门紧密合作，有机会参与双方联合培养。</p>
-										<p class="contact_p">充分发挥先进模范的示范榜样作用，激励广大党员群众学习先进、坚定决心信心，为新年的工作征程鼓舞斗志士气，2024年1月第六工程部党支部举行了以“回首奋进路、启航新征程”为主题的党日活动。</p>
-				
-				
-	
-
-
-								
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-					<header>
-						<h3 id="荣誉之星" class="title-head">荣誉之星</h3>
-					</header>
-						<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2024第四季度</b></h3>
-				
-							<h4><b>科研之星：戴光祥</b></h4>
-							
-							<p>戴光祥同学自工程转博以来，以博士标准严格要求自己，面向工程任务需求，以情报汇聚为核心，在已有研究基础上，积极调整科研布局，构建顶层思维，取得了不错的阶段成果。同时，该同学还积极参与一系列业务支撑工作，有力保障了项目顺利推进和重大节点考核工作。建议戴光祥同学围绕工程任务需求，继续加强顶层设计，统筹科研与业务工作，取得更加丰硕的成果。</p>
-							<br>
-							<h4><b>科研之星：胡晓伟</b></h4>
-							
-							<p>胡晓伟同学本季度在网络威胁规则泛化研究方面取得较为突出的成果，该工作为威胁情报的丰富扩展与未知威胁检测提供全新的技术思路，希望后续在这一研究方向持续投入，为产出高价值应用提供关键支撑。</p>
-							<br>
-							
-							<h4><b>科研之星：刘继鹏</b></h4>
-							
-							<p>刘继鹏同学工作勤奋、任务饱满，积极主动承担研究所重大工程，排除万难坚持在甲方单位驻场攻关，为项目顺利实施做出重要贡献，获得甲方认可。科研方面，该同学聚焦深度伪造鉴别这一热点难点问题，积极思考、努力攻研，形成创新性研究方案，并取得富有竞争力的实验效果，论文成果投稿顶级学术会议并申请知识产权。希望刘继鹏同学继续努力，持续推进科研和项目工作。</p>
-							<br>
-
-							<h4><b>科研之星：杨琛</b></h4>
-							
-							<p>杨琛同学治学严谨，积极参与学科竞赛和技术攻关，在多个全国竞赛中磨练技术，形成对于相关领域的深刻理解。科研方面，该同学聚焦深度伪造可解释性研究，形成了创新性前沿研究方案，文章被高水平国际会议接收；同时持续推进新的研究工作，形成具有连续性的研究工作。希望杨琛同学在未来的科研工作中持续探索，结合领域前沿和应用场景，形成创新性、实用性科研成果。</p>
-							<br>			
-								<h4><b>科研之星：杨琛</b></h4>
-							
-							<p>杨琛同学治学严谨，积极参与学科竞赛和技术攻关，在多个全国竞赛中磨练技术，形成对于相关领域的深刻理解。科研方面，该同学聚焦深度伪造可解释性研究，形成了创新性前沿研究方案，文章被高水平国际会议接收；同时持续推进新的研究工作，形成具有连续性的研究工作。希望杨琛同学在未来的科研工作中持续探索，结合领域前沿和应用场景，形成创新性、实用性科研成果。</p>
-							<br>							
-								<h4><b>新手之星：琚敬成</b></h4>
-							
-							<p>琚敬成同学积极参与课题组内的项目任务和科研任务，乐于向困难问题发起挑战，工程能力和科研能力成长迅速。在项目研发中刻苦攻坚，协助完成了许多重大问题的突破，在科研工作中积极思考，提供了许多创新思路。希望在后续的工作中，进一步磨炼技能，保持沉稳心态，取得更优异的成果。</p>
-							<br>							
-						
-								<h4><b>新手之星：陈书桓</b></h4>
-							
-							<p>陈书桓同学基础理论功底扎实，研一集中学习阶段充分利用课余时间积极开展前沿技术攻关，在深度伪造检测方向开展前沿研究，论文成果被高水平学术会议接收，为后续开展进一步研究确立了较高起点。此外，该同学积极参加学术竞赛，通过持续优化升级在深伪检测赛题中取得最优结果，形成先进技术成果。希望陈书桓同学再接再厉、砥砺前行，努力实现更多高质量研究成果。</p>
-							<br>	
-								<h4><b>新手之星：陈鸿</b></h4>
-							
-							<p>陈鸿同学积极乐观，认真踏实，具有很强的集体荣誉感和责任感，在科研工作中展现了扎实的理论基础和较强的实践动手能力，能够与他人配合协作、高效完成科研各项任务。陈鸿同学围绕大模型在网络安全领域的应用开展了前沿探索，并在代码翻译方向取得了一定进展。希望他在后续学习与科研过程中进一步激发创新灵感，不断提高独立思考能力，注重细节，精益求精，努力形成高水平研究成果。</p>
-							<br>	
-
-								<h4><b>新手之星：俱硕</b></h4>
-							
-							<p>俱硕同学勤奋刻苦，思维敏捷，在科研工作和团队协作中表现优异。他以自动驾驶安全为主要研究方向，积极探索智能安全领域的关键问题，取得了阶段性进展。在研究过程中，俱硕同学注重深入分析难点问题，敢于提出自己的见解，展现出较强的自主学习能力。希望他在未来的学习与研究中继续保持严谨认真的态度，敢于迎接挑战，勇于攻克难题，力争产出高水平研究成果。</p>
-							<br>	
-							
-							<br>
-
-						</div>
-
-						<div class="clearfix"></div>
-					</div>
-
-
-					
-										<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2024第二季度</b></h3>
-				
-							<h4><b>科研之星：赵法起</b></h4>
-							
-							<p>赵法起同学能够积极投入课题组的紧迫需求，在课题组承担的多项工程任务中发挥重要作用，认真踏实推进工程建设任务，积累了良好的项目实施经验；在科研创新任务中也表现出色，针对流量威胁检测中的特征补全等问题提出了可行的技术思路。该同学在当前的科研工作中取得了较为突出的成果，在团队内树立了良好的形象，希望在后续的科研工作中再接再励，发挥骨干带头作用。</p>
-							<br>
-							<h4><b>科研之星：江俊烨</b></h4>
-							
-							<p>江俊烨同学在科研方面勇于挑战未知问题，动手能力强，积极参与课题组内重要项目工作。在某科研任务中刻苦攻坚，解决了若干关键难题，形成清晰完整的分析报告；同时具有较好的组织协调能力，推进组内成员协作。希望在后续的科研工作中，能够继续努力，总结凝练科学问题，形成高水平学术成果。</p>
-							<br>
-							
-							<h4><b>新手之星：黄梓晟</b></h4>
-							
-							<p>黄梓晟同学思维活跃，敢于创新，在科研工作和团队任务中表现优异，围绕自动驾驶智能安全的探索研究取得阶段性进展。希望在后续工作学习中再接再厉，充分发挥主观能动性，努力做到有目标、善自律、攻难题、求极致，争取产出有实用价值的高水平创新性成果。</p>
-							<br>
-						
-							
-							<br>
-
-						</div>
-
-						<div class="clearfix"></div>
-					</div>
-
-				
-
-					
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2024第一季度</b></h3>
-							<br>
-
-							<h4><b>所长优秀奖：李文灏，鲍怀锋，张斌，赵唯松，唐志敏</b></h4>
-							<br>
-
-							<h4><b>科研之星：王星宇</b></h4>
-							
-							<p>王星宇同学能够积极参与课题组的多项工作，在某重要科研任务中承担规则生成等关键技术研究，在算法设计和模型构造方面发挥了重要作用，希望在后续的科研工作中，能够再接再厉，围绕关键技术的落地应用下功夫。</p>
-							<br>
-							<h4><b>科研之星：史蓉</b></h4>
-							
-							<p>史蓉同学在本季度学习工作中认真踏实的参与到课题组多项科研任务中，在某漏洞流量相关项目中承担关键技术研究工作，同时在多项课题组重要工程中发挥主要支撑作用，希望在后续的工作中能够不断拓宽思路，继续围绕算法模型的构造开展，形成实用成果。</p>
-							<br>
-
-							<h4><b>科研之星：于艾靖</b></h4>
-							
-							<p>于艾靖同学勤勉努力、积极上进，在研究团队中贡献全面、综合表现出色，参与了研究报告撰写、赛题设计拟制、指南方案论证、项目研发实施、重要活动组织保障等多项工作。在科研方面，她聚焦基于多模态预训练模型的前沿应用技术研究，聚焦重点难点问题，形成了具有创新性、实用性的解决方案，扎实稳步推进学术研究工作。希望于艾靖同学在未来的科研工作中继续努力、潜心打磨，形成具有影响力的代表性研究成果。</p>
-							<br>
-
-
-							
-							<h4><b>新手之星：冯悦</b></h4>
-							
-							<p>冯悦同学勤奋刻苦、乐观向上，入学以来积极投入并出色完成多项科研任务。围绕耦合网络级联分析的难点问题，开展了探索性研究，取得了阶段性进展。希望在后续工作学习中再接再厉，发散思维，进一步发挥主观能动性，不断攻坚克难，形成高水平创新性研究成果。</p>
-							<br>
-						
-							<h4><b>新手之星：邢思雨</b></h4>
-							
-							<p>邢思雨同学基础理论扎实严谨、科研工作勤奋踏实，在媒体生成研究领域开展了创新性研究工作，形成了学术论文、发明专利等阶段性研究成果。在研究团队中，她勤恳努力、勇于求索，通过积极参与项目策划申报、现状调研分析、方案设计论证，锻造了自身的综合能力，也为团队做出了实际贡献。希望邢思雨同学充分发挥自身优势，在未来的科研工作中接续奋斗、砥砺前行，努力形成更多高水平成果。
-							</p>
-							<br>
-
-						</div>
-
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2023第三季度</b></h3>
-							<br>
-							<h4><b>科研之星：徐雨婷</b></h4>
-							
-							<p>徐雨婷同学基础理论功底扎实、课程学习勤奋刻苦，聚焦实际应用场景，积极开展人工智能安全前沿技术攻关，在深度伪造检测方向形成了创新性先进研究思路和技术方案，算法效能得到初步验证，取得了高水平学术论文成果。与此同时，该同学积极参与项目申报、研发等工作，在技术调研、方案撰写、算法实现等方面做出了贡献。希望徐雨婷同学再接再厉，更加贴近实战场景，努力创造更多应用导向的高水平研究成果。</p>
-							<br>
-							<h4><b>科研之星：赵法起</b></h4>
-							
-							<p>赵法起同学在本季度入学以来，能够发挥勤奋刻苦的精神，积极参与课题组的多项重要科研任务，工作态度认真细致，克服困难，获得老师和同学的一致好评，希望在后续的工作中不断努力，争取更大的成绩！</p>
-							<br>
-
-							<h4><b>科研之星：张炜超</b></h4>
-							
-							<p>张炜超同学能够按照业务组主流方向，积极投入业务组工作，克服困难，出色完成交代任务；并能将业务工作和科研工作相结合，主动梳理和凝练研究方向，取得阶段性成果。望后续能够再接再厉，将业务工作与科研工作融合推进，取得创新性成果。</p>
-							<br>
-
-
-							
-							<h4><b>新手之星：徐溢凡</b></h4>
-							
-							<p>徐溢凡同学工作认真，善于思考，能够高效完成各项科研任务，具有较强的自主学习能力和实践动手能力。在跨域级联方向开展了前沿探索研究，对该领域的主要难点问题、关键技术挑战有了较清晰的认识，能够提出自己的观点见解。希望徐溢凡同学在后续学习过程中，甘坐冷板凳、敢啃硬骨头，进一步激发创新灵感，提高独立思考能力，争取形成高水平研究成果。</p>
-							<br>
-						
-
-
-						</div>
-
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2023第二季度</b></h3>
-							<br>
-							<h4><b>科研之星：蔡伟霞</b></h4>
-							
-							<p>蔡伟霞同学认真踏实，不骄不躁，注重全面发展。参与多份战略研究报告和学术专著的撰写，具备一定的战略思维能力及视野。在网络攻防对抗智能博弈与规划等方向开展了深入研究，形成了一些创新性研究成果。希望在后续的学习工作中再接再厉，不断提高宏观、顶层战略思维能力，培养国际战略视角，同时注重开展以战略需求为导向的创新研究，产出高水平研究成果。</p>
-							<br>
-							<h4><b>科研之星：张斌</b></h4>
-							
-							<p>张斌同学工作勤奋踏实、能力发展全面，荣获三好学生、优秀班干部等荣誉称号，在科研、支撑等方面均有出色表现，为项目论证、申报、实施做出了大量工作和重要贡献。在面向人脸数据的活体检测研究方向，该同学勤于思考、勇于求索，聚焦重点难点问题，突破了若干关键技术，形成了同行认可的研究方案与论文成果。希望张斌同学在未来的科研工作中继续努力、潜心打磨，努力形成更具影响力的代表性研究成果。</p>
-							<br>
-
-							<h4><b>科研之星：陈思达</b></h4>
-							
-							<p>陈思达同学能够发挥吃苦耐劳的精神，认真钻研并提升样本分析业务水平，在厦门等会战任务中表现出色，很好的完成研究所与用户交代的攻关任务，希望在后续科研工作中能够不断拓宽视野，丰富知识技能，勇于承担攻坚任务，成长为一名优秀的网络安全专业技能人才。</p>
-							<br>
-
-							<h4><b>新手之星：张凯薇</b></h4>
-							
-							<p>张凯薇同学基础理论知识学习勤奋、功底扎实，积极开展前沿技术攻关，在图神经网络方向开展了深入研究，并在谣言检测场景下开展应用验证，形成了创新性研究成果和高水平学术论文。此外，该同学积极参与项目论证、申报、研发等工作，在技术调研、方案撰写、算法实现等方面做出了贡献。希望张凯薇同学再接再厉，进一步聚焦领域前沿，努力实现应用导向的创新性研究成果。</p>
-							<br>
-
-
-						</div>
-
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2023第一季度</b></h3>
-							<br>
-							<h4><b>科研之星：鲍怀锋</b></h4>
-							
-							<p>鲍怀锋同学能够以认真负责严谨踏实的态度参与多项课题组重要工作，在重要项目论证规划、预研课题指南论证、申报等工作中积累了丰富的实践经验，多次获得用户好评，希望在后续的学习工作中能够更好的发挥主观能动性，不断丰富研究框架，突破并掌握行业所需的前沿创新核心技术。</p>
-							<br>
-							<h4><b>科研之星：夏雨微</b></h4>
-							
-							<p>夏雨微同学科研工作成绩突出，在动态知识图谱分析、小样本学习等方向开展了深入研究，对于重点难点问题、关键科学问题、关键技术路线具备较为全面清晰的理解，初步形成了创新性研究成果和体系化研究方案，在智能态势分析预测方面具有较好应用前景。此外，该同学积极参与到项目论证、申报、研发工作中，在技术调研、方案撰写方面做出了一定贡献。希望夏雨微同学再接再厉，努力开展以实际应用为导向的创新研究，不断形成高水平研究成果。</p>
-							<br>
-							<h4><b>新手之星：童昭</b></h4>
-							
-							<p>童昭同学治学态度认真、工作勤奋踏实，积极投身研究所重大工程并在其中担任重要角色，在系统对接、联试验证、质量规范等方面开展大量工作，为项目顺利实施做出重要贡献。在科研方面，该同学聚焦多模态融合分析，开展了文献调研和算法实现工作，初步形成了研究思路与方案，扎实稳步推进学术研究工作。希望童昭同学在未来的科研工作中继续努力，形成创新性、实用性科研成果。</p>
-							<br>
-							<h4><b>新手之星：徐文武</b></h4>
-							
-							<p>徐文武同学自入学以来，始终保持科研热情，在完成课程学习的同时能针对感兴趣的方向不断加强学习、积累和总结，并能保质保量完成交予的科研任务。希望后续能够紧盯业界现实问题和趋势，加强主观思考，举一反三，进一步扩大视野，产出实际应用成果。</p>
-							<br>
-
-
-						</div>
-
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2022第四季度</b></h3>
-							<br>
-							<h4><b>科研之星：李文灏</b></h4>
-							<h4><b>科研之星：徐金鹏</b></h4>
-							<h4><b>科研之星：秦海文</b></h4>
-							<h4><b>新手之星：戴光祥</b></h4>
-
-
-						</div>
-
-						<div class="clearfix"></div>
-					</div>
-						
-
-
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2022第三季度</b></h3>
-							<br>
-							<h4><b>科研之星：缪涵</b></h4>
-							<h4><b>新手之星：赵唯松</b></h4>
-
-
-						</div>
-						<div class="clearfix"></div>
-					</div>	
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2022第二季度</b></h3>
-							<br>
-							<h4><b>科研之星：刘家志</b></h4>
-							<h4><b>科研之星：鲍怀锋</b></h4>
-							<h4><b>科研之星：杨梓铭</b></h4>
-
-
-						</div>
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2021第三季度</b></h3>
-							<br>
-							<h4><b>伯乐超星：石海超</b></h4>
-
-
-						</div>
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2021第二季度</b></h3>
-							<br>
-							<h4><b>伯乐超星：汤子贤</b></h4>
-							<h4><b>科研之星：蔡伟霞</b></h4>
-							<h4><b>科研之星：李琳</b></h4>
-							<h4><b>科研之星：张亚如</b></h4>
-
-
-						</div>
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2021第一季度</b></h3>
-							<br>
-							<h4><b>科研之星：鲍怀锋</b></h4>
-							<h4><b>科研之星：宋世文</b></h4>
-
-						</div>
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="article">
-						<div class="article-left" style="width: 400px;">
-							<h3><b>2020第四季度</b></h3>
-							<br>
-							<h4><b>科研之星：石海超</b></h4>
-							<h4><b>科研之星：汤子贤</b></h4>
-							<h4><b>科研之星：王强</b></h4>
-							<h4><b>科研之星：王晨</b></h4>
-							<h4><b>新手之星：杜雨鑫</b></h4>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-
-
-
-
-
-
-
-					
-
-		</div>
-		</div>
-
-
-					
-			
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<!-- content-section-ends-here -->
-	<!-- footer-section-starts-here -->
-	<div class="footer">
-<!-- 		<div class="footer-top">
-			<div class="wrap">
-				<div class="col-md-3 col-xs-6 col-sm-4 footer-grid">
-					<h4 class="footer-head">About Us</h4>
-					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-					<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.</p>
-				</div>
-				<div class="col-md-2 col-xs-6 col-sm-2 footer-grid">
-					<h4 class="footer-head">Categories</h4>
-					<ul class="cat">
-						<li><a href="business.html">Business</a></li>
-						<li><a href="technology.html">Technology</a></li>
-						<li><a href="entertainment.html">Entertainment</a></li>
-						<li><a href="sports.html">Sports</a></li>
-						<li><a href="shortcodes.html">Health</a></li>
-						<li><a href="fashion.html">Fashion</a></li>
-					</ul>
-				</div>
-				<div class="col-md-4 col-xs-6 col-sm-6 footer-grid">
-					<h4 class="footer-head">Flickr Feed</h4>
-					<ul class="flickr">
-						<li><a href="#"><img src="images/bus4.jpg"></a></li>
-						<li><a href="#"><img src="images/bus2.jpg"></a></li>
-						<li><a href="#"><img src="images/bus3.jpg"></a></li>
-						<li><a href="#"><img src="images/tec4.jpg"></a></li>
-						<li><a href="#"><img src="images/tec2.jpg"></a></li>
-						<li><a href="#"><img src="images/tec3.jpg"></a></li>
-						<li><a href="#"><img src="images/bus2.jpg"></a></li>
-						<li><a href="#"><img src="images/bus3.jpg"></a></li>
-						<div class="clearfix"></div>
-					</ul>
-				</div>
-				<div class="col-md-3 col-xs-12 footer-grid">
-					<h4 class="footer-head">Contact Us</h4>
-					<span class="hq">Our headquaters</span>
-					<address>
-						<ul class="location">
-							<li><span class="glyphicon glyphicon-map-marker"></span></li>
-							<li>CENTER FOR FINANCIAL ASSISTANCE TO DEPOSED NIGERIAN ROYALTY</li>
-							<div class="clearfix"></div>
-						</ul>	
-						<ul class="location">
-							<li><span class="glyphicon glyphicon-earphone"></span></li>
-							<li>+0 561 111 235</li>
-							<div class="clearfix"></div>
-						</ul>	
-						<ul class="location">
-							<li><span class="glyphicon glyphicon-envelope"></span></li>
-							<li><a href="mailto:info@example.com">mail@example.com</a></li>
-							<div class="clearfix"></div>
-						</ul>						
-					</address>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div> -->
-		<div class="footer-bottom">
-			<div class="wrap">
-				<div>
-					<div style="text-align:center;color: white">Copyright©. Powered by Wenhao Li. Contact liwenhao(at)iie.ac.cn for consulting.</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
-	<!-- footer-section-ends-here -->
-	<script type="text/javascript">
-
-
-		$(document).ready(function() {			
-		$().UItoTop({ easingType: 'easeOutQuart' });
+    <!-- content-section-starts-here -->
+    <div class="main-body" style="width: 80%; margin-left: 14%">
+        <div class="wrap">
+            <div class="col-md-10 ">
+                <div class="articles">
+                    <header>
+                        <h3 id="团建活动" class="title-head">团队日常</h3>
+                    </header>
+                    <div class="article_last">
+                        <div class="article-left" style="width: 50%;margin-left:0%">
+                            <img src="images/Polaris_title.png">
+                            <img src="images/Annual_meeting20240127.jpg">
+                        </div>
+                        <div class="article-right">
+                            <div class="article-text" style="font-size: 120%;">
+                                <p class="contact_p">研究方向和内容规划瞄准国家战略，面向领域亟需，紧扣行业热点。以现实任务为驱动，采用三元培养模式--战略、工程、技术三位一体的网安新工科人才培养模式，以综合能力为评价标准，培养具有战略视野高度、重大工程规划和前沿技术创新能力的专业型与综合型网络安全人才。</p>
+                                <br>
+                                <p class="contact_p">根据培养目标和方向，可为团队成员提供丰富的基础资源与研究条件，有机会与领域战略科学家包括院士深度交流并接受指导培养，深度参与国家级重大工程与科研项目，参与国际顶级学术交流会议、国家与行业的学术会议。</p>
+                                <br>
+                                <p class="contact_p">面向网络安全领域和行业亟需，加强学术界与工业界的交流，为学生提供优秀的学习环境与培养机会，与360、奇安信、安天等安全企业紧密联系，与国家重要应用出口部门紧密合作，有机会参与双方联合培养。</p>
+                                <p class="contact_p">充分发挥先进模范的示范榜样作用，激励广大党员群众学习先进、坚定决心信心，为新年的工作征程鼓舞斗志士气，2024年1月第六工程部党支部举行了以"回首奋进路、启航新征程"为主题的党日活动。</p>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <header>
+                        <h3 id="荣誉之星" class="title-head">荣誉之星</h3>
+                    </header>
+                    
+                    <!-- 2024第四季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2024第四季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：戴光祥</div>
+                                <div class="honor-star-comment">
+                                    戴光祥同学自工程转博以来，以博士标准严格要求自己，面向工程任务需求...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        建议戴光祥同学围绕工程任务需求，继续加强顶层设计，统筹科研与业务工作，取得更加丰硕的成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：胡晓伟</div>
+                                <div class="honor-star-comment">
+                                    胡晓伟同学本季度在网络威胁规则泛化研究方面取得较为突出的成果...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        希望后续在这一研究方向持续投入，为产出高价值应用提供关键支撑。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：刘继鹏</div>
+                                <div class="honor-star-comment">
+                                    刘继鹏同学工作勤奋、任务饱满，积极主动承担研究所重大工程...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        排除万难坚持在甲方单位驻场攻关，为项目顺利实施做出重要贡献，获得甲方认可。科研方面，该同学聚焦深度伪造鉴别这一热点难点问题，积极思考、努力攻研，形成创新性研究方案，并取得富有竞争力的实验效果，论文成果投稿顶级学术会议并申请知识产权。希望刘继鹏同学继续努力，持续推进科研和项目工作。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：杨琛</div>
+                                <div class="honor-star-comment">
+                                    杨琛同学治学严谨，积极参与学科竞赛和技术攻关...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在多个全国竞赛中磨练技术，形成对于相关领域的深刻理解。科研方面，该同学聚焦深度伪造可解释性研究，形成了创新性前沿研究方案，文章被高水平国际会议接收；同时持续推进新的研究工作，形成具有连续性的研究工作。希望杨琛同学在未来的科研工作中持续探索，结合领域前沿和应用场景，形成创新性、实用性科研成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：琚敬成</div>
+                                <div class="honor-star-comment">
+                                    琚敬成同学积极参与课题组内的项目任务和科研任务...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        乐于向困难问题发起挑战，工程能力和科研能力成长迅速。在项目研发中刻苦攻坚，协助完成了许多重大问题的突破，在科研工作中积极思考，提供了许多创新思路。希望在后续的工作中，进一步磨炼技能，保持沉稳心态，取得更优异的成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：陈书桓</div>
+                                <div class="honor-star-comment">
+                                    陈书桓同学基础理论功底扎实，研一集中学习阶段充分利用课余时间...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        积极开展前沿技术攻关，在深度伪造检测方向开展前沿研究，论文成果被高水平学术会议接收，为后续开展进一步研究确立了较高起点。此外，该同学积极参加学术竞赛，通过持续优化升级在深伪检测赛题中取得最优结果，形成先进技术成果。希望陈书桓同学再接再厉、砥砺前行，努力实现更多高质量研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：陈鸿</div>
+                                <div class="honor-star-comment">
+                                    陈鸿同学积极乐观，认真踏实，具有很强的集体荣誉感和责任感...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在科研工作中展现了扎实的理论基础和较强的实践动手能力，能够与他人配合协作、高效完成科研各项任务。陈鸿同学围绕大模型在网络安全领域的应用开展了前沿探索，并在代码翻译方向取得了一定进展。希望他在后续学习与科研过程中进一步激发创新灵感，不断提高独立思考能力，注重细节，精益求精，努力形成高水平研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：俱硕</div>
+                                <div class="honor-star-comment">
+                                    俱硕同学勤奋刻苦，思维敏捷，在科研工作和团队协作中表现优异...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        他以自动驾驶安全为主要研究方向，积极探索智能安全领域的关键问题，取得了阶段性进展。在研究过程中，俱硕同学注重深入分析难点问题，敢于提出自己的见解，展现出较强的自主学习能力。希望他在未来的学习与研究中继续保持严谨认真的态度，敢于迎接挑战，勇于攻克难题，力争产出高水平研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2024第二季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2024第二季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：赵法起</div>
+                                <div class="honor-star-comment">
+                                    赵法起同学能够积极投入课题组的紧迫需求...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在课题组承担的多项工程任务中发挥重要作用，认真踏实推进工程建设任务，积累了良好的项目实施经验；在科研创新任务中也表现出色，针对流量威胁检测中的特征补全等问题提出了可行的技术思路。该同学在当前的科研工作中取得了较为突出的成果，在团队内树立了良好的形象，希望在后续的科研工作中再接再励，发挥骨干带头作用。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：江俊烨</div>
+                                <div class="honor-star-comment">
+                                    江俊烨同学在科研方面勇于挑战未知问题...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        动手能力强，积极参与课题组内重要项目工作。在某科研任务中刻苦攻坚，解决了若干关键难题，形成清晰完整的分析报告；同时具有较好的组织协调能力，推进组内成员协作。希望在后续的科研工作中，能够继续努力，总结凝练科学问题，形成高水平学术成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：黄梓晟</div>
+                                <div class="honor-star-comment">
+                                    黄梓晟同学思维活跃，敢于创新...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在科研工作和团队任务中表现优异，围绕自动驾驶智能安全的探索研究取得阶段性进展。希望在后续工作学习中再接再厉，充分发挥主观能动性，努力做到有目标、善自律、攻难题、求极致，争取产出有实用价值的高水平创新性成果。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2024第一季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2024第一季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">所长优秀奖：李文灏，鲍怀锋，张斌，赵唯松，唐志敏</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：王星宇</div>
+                                <div class="honor-star-comment">
+                                    王星宇同学能够积极参与课题组的多项工作...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在某重要科研任务中承担规则生成等关键技术研究，在算法设计和模型构造方面发挥了重要作用，希望在后续的科研工作中，能够再接再厉，围绕关键技术的落地应用下功夫。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：史蓉</div>
+                                <div class="honor-star-comment">
+                                    史蓉同学在本季度学习工作中认真踏实的参与到课题组多项科研任务中...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在某漏洞流量相关项目中承担关键技术研究工作，同时在多项课题组重要工程中发挥主要支撑作用，希望在后续的工作中能够不断拓宽思路，继续围绕算法模型的构造开展，形成实用成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：于艾靖</div>
+                                <div class="honor-star-comment">
+                                    于艾靖同学勤勉努力、积极上进...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在研究团队中贡献全面、综合表现出色，参与了研究报告撰写、赛题设计拟制、指南方案论证、项目研发实施、重要活动组织保障等多项工作。在科研方面，她聚焦基于多模态预训练模型的前沿应用技术研究，聚焦重点难点问题，形成了具有创新性、实用性的解决方案，扎实稳步推进学术研究工作。希望于艾靖同学在未来的科研工作中继续努力、潜心打磨，形成具有影响力的代表性研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：冯悦</div>
+                                <div class="honor-star-comment">
+                                    冯悦同学勤奋刻苦、乐观向上...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        入学以来积极投入并出色完成多项科研任务。围绕耦合网络级联分析的难点问题，开展了探索性研究，取得了阶段性进展。希望在后续工作学习中再接再厉，发散思维，进一步发挥主观能动性，不断攻坚克难，形成高水平创新性研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：邢思雨</div>
+                                <div class="honor-star-comment">
+                                    邢思雨同学基础理论扎实严谨、科研工作勤奋踏实...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在媒体生成研究领域开展了创新性研究工作，形成了学术论文、发明专利等阶段性研究成果。在研究团队中，她勤恳努力、勇于求索，通过积极参与项目策划申报、现状调研分析、方案设计论证，锻造了自身的综合能力，也为团队做出了实际贡献。希望邢思雨同学充分发挥自身优势，在未来的科研工作中接续奋斗、砥砺前行，努力形成更多高水平成果。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2023第三季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2023第三季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：徐雨婷</div>
+                                <div class="honor-star-comment">
+                                    徐雨婷同学基础理论功底扎实、课程学习勤奋刻苦...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        聚焦实际应用场景，积极开展人工智能安全前沿技术攻关，在深度伪造检测方向形成了创新性先进研究思路和技术方案，算法效能得到初步验证，取得了高水平学术论文成果。与此同时，该同学积极参与项目申报、研发等工作，在技术调研、方案撰写、算法实现等方面做出了贡献。希望徐雨婷同学再接再厉，更加贴近实战场景，努力创造更多应用导向的高水平研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：赵法起</div>
+                                <div class="honor-star-comment">
+                                    赵法起同学在本季度入学以来...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        能够发挥勤奋刻苦的精神，积极参与课题组的多项重要科研任务，工作态度认真细致，克服困难，获得老师和同学的一致好评，希望在后续的工作中不断努力，争取更大的成绩！
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：张炜超</div>
+                                <div class="honor-star-comment">
+                                    张炜超同学能够按照业务组主流方向...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        积极投入业务组工作，克服困难，出色完成交代任务；并能将业务工作和科研工作相结合，主动梳理和凝练研究方向，取得阶段性成果。望后续能够再接再厉，将业务工作与科研工作融合推进，取得创新性成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：徐溢凡</div>
+                                <div class="honor-star-comment">
+                                    徐溢凡同学工作认真，善于思考...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        能够高效完成各项科研任务，具有较强的自主学习能力和实践动手能力。在跨域级联方向开展了前沿探索研究，对该领域的主要难点问题、关键技术挑战有了较清晰的认识，能够提出自己的观点见解。希望徐溢凡同学在后续学习过程中，甘坐冷板凳、敢啃硬骨头，进一步激发创新灵感，提高独立思考能力，争取形成高水平研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2023第二季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2023第二季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：蔡伟霞</div>
+                                <div class="honor-star-comment">
+                                    蔡伟霞同学认真踏实，不骄不躁...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        注重全面发展。参与多份战略研究报告和学术专著的撰写，具备一定的战略思维能力及视野。在网络攻防对抗智能博弈与规划等方向开展了深入研究，形成了一些创新性研究成果。希望在后续的学习工作中再接再厉，不断提高宏观、顶层战略思维能力，培养国际战略视角，同时注重开展以战略需求为导向的创新研究，产出高水平研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：张斌</div>
+                                <div class="honor-star-comment">
+                                    张斌同学工作勤奋踏实、能力发展全面...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        荣获三好学生、优秀班干部等荣誉称号，在科研、支撑等方面均有出色表现，为项目论证、申报、实施做出了大量工作和重要贡献。在面向人脸数据的活体检测研究方向，该同学勤于思考、勇于求索，聚焦重点难点问题，突破了若干关键技术，形成了同行认可的研究方案与论文成果。希望张斌同学在未来的科研工作中继续努力、潜心打磨，努力形成更具影响力的代表性研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：陈思达</div>
+                                <div class="honor-star-comment">
+                                    陈思达同学能够发挥吃苦耐劳的精神...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        认真钻研并提升样本分析业务水平，在厦门等会战任务中表现出色，很好的完成研究所与用户交代的攻关任务，希望在后续科研工作中能够不断拓宽视野，丰富知识技能，勇于承担攻坚任务，成长为一名优秀的网络安全专业技能人才。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：张凯薇</div>
+                                <div class="honor-star-comment">
+                                    张凯薇同学基础理论知识学习勤奋、功底扎实...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        积极开展前沿技术攻关，在图神经网络方向开展了深入研究，并在谣言检测场景下开展应用验证，形成了创新性研究成果和高水平学术论文。此外，该同学积极参与项目论证、申报、研发等工作，在技术调研、方案撰写、算法实现等方面做出了贡献。希望张凯薇同学再接再厉，进一步聚焦领域前沿，努力实现应用导向的创新性研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2023第一季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2023第一季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：鲍怀锋</div>
+                                <div class="honor-star-comment">
+                                    鲍怀锋同学能够以认真负责严谨踏实的态度参与多项课题组重要工作...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在重要项目论证规划、预研课题指南论证、申报等工作中积累了丰富的实践经验，多次获得用户好评，希望在后续的学习工作中能够更好的发挥主观能动性，不断丰富研究框架，突破并掌握行业所需的前沿创新核心技术。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：夏雨微</div>
+                                <div class="honor-star-comment">
+                                    夏雨微同学科研工作成绩突出...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        在动态知识图谱分析、小样本学习等方向开展了深入研究，对于重点难点问题、关键科学问题、关键技术路线具备较为全面清晰的理解，初步形成了创新性研究成果和体系化研究方案，在智能态势分析预测方面具有较好应用前景。此外，该同学积极参与到项目论证、申报、研发工作中，在技术调研、方案撰写方面做出了一定贡献。希望夏雨微同学再接再厉，努力开展以实际应用为导向的创新研究，不断形成高水平研究成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：童昭</div>
+                                <div class="honor-star-comment">
+                                    童昭同学治学态度认真、工作勤奋踏实...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        积极投身研究所重大工程并在其中担任重要角色，在系统对接、联试验证、质量规范等方面开展大量工作，为项目顺利实施做出重要贡献。在科研方面，该同学聚焦多模态融合分析，开展了文献调研和算法实现工作，初步形成了研究思路与方案，扎实稳步推进学术研究工作。希望童昭同学在未来的科研工作中继续努力，形成创新性、实用性科研成果。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：徐文武</div>
+                                <div class="honor-star-comment">
+                                    徐文武同学自入学以来...
+                                    <span class="collapse-button" onclick="toggleComment(this)">展开</span>
+                                    <div class="hidden-comment">
+                                        始终保持科研热情，在完成课程学习的同时能针对感兴趣的方向不断加强学习、积累和总结，并能保质保量完成交予的科研任务。希望后续能够紧盯业界现实问题和趋势，加强主观思考，举一反三，进一步扩大视野，产出实际应用成果。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2022第四季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2022第四季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：李文灏</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：徐金鹏</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：秦海文</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：戴光祥</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2022第三季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2022第三季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：缪涵</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：赵唯松</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2022第二季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2022第二季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：刘家志</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：鲍怀锋</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：杨梓铭</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2021第三季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2021第三季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">伯乐超星：石海超</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2021第二季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2021第二季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">伯乐超星：汤子贤</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：蔡伟霞</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：李琳</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：张亚如</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2021第一季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2021第一季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：鲍怀锋</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：宋世文</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2020第四季度 -->
+                    <div class="quarter-container">
+                        <div class="quarter-title">2020第四季度</div>
+                        <div class="honor-star-container">
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：石海超</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：汤子贤</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：王强</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">科研之星：王晨</div>
+                            </div>
+                            <div class="honor-star-item">
+                                <div class="honor-star-title">新手之星：杜雨鑫</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- content-section-ends-here -->
+    <!-- footer-section-starts-here -->
+    <div class="footer">
+        <div class="footer-bottom">
+            <div class="wrap">
+                <div>
+                    <div style="text-align:center;color: white">Copyright©. Powered by Wenhao Li. Contact liwenhao(at)iie.ac.cn for consulting.</div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer-section-ends-here -->
+    <script type="text/javascript">
+        $(document).ready(function() {            
+        $().UItoTop({ easingType: 'easeOutQuart' });
 });
 </script>
-
-
-
-
 <a href="#to-top" id="toTop" > <span id="toTopHover" style="opacity: 1;"> </span></a>
-<!---->
-
-
+<script>
+    function toggleComment(button) {
+        const comment = button.parentElement.querySelector('.hidden-comment');
+        if (comment.style.display === 'none') {
+            comment.style.display = 'block';
+            button.textContent = '收起';
+        } else {
+            comment.style.display = 'none';
+            button.textContent = '展开';
+        }
+    }
+</script>
 </body>
 </html>
