@@ -187,3 +187,12 @@
 .logo2_width{
   width: 30%;
 }
+
+.image-caption {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-family: Microsoft YaHei;
+  font-size: 150%;
+  color: #333;
+}
