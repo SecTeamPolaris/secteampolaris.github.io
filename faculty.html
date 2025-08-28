@@ -11,6 +11,7 @@
     addEventListener("load", function () {
       setTimeout(hideURLbar, 0);
     }, false);
+
     function hideURLbar() {
       window.scrollTo(0, 1);
     }
@@ -42,19 +43,28 @@
   </script>
   <style>
     /* 多列布局核心样式 */
-   .faculty-section {
+    .faculty-section {
       margin: 30px 0;
     }
 
-   .faculty-grid {
+    .faculty-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(48%, 1fr)); /* 双列布局，自动适应宽度 */
-      gap: 20px; /* 列间距 */
+      grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+      /* 双列布局，自动适应宽度 */
+      gap: 20px;
+      /* 列间距 */
       margin: 0 -10px;
       padding: 0 10px;
     }
 
-   .faculty-card {
+    /* 单列布局，用于部门领导 */
+    .single-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .faculty-card {
       padding: 15px;
       border: 1px solid #f0f0f0;
       border-radius: 8px;
@@ -66,42 +76,67 @@
       transition: transform 0.2s ease;
     }
 
-   .faculty-card:hover {
-      transform: translateY(-3px); /* 悬停效果增强交互感 */
+    .faculty-card:hover {
+      transform: translateY(-3px);
+      /* 悬停效果增强交互感 */
     }
 
-   .faculty-avatar {
-      flex: 0 0 100px; /* 缩小头像区域，更紧凑 */
+    .faculty-role {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px 5px;
+      border-right: 1px solid #ddd;
+      text-align: center;
+      color: #333;
+      margin-left: 20px; /* 添加左侧缩进，影响整个section */
+    }
+    
+    /* 让faculty-role的缩进影响整个section */
+    .leader-row {
+      padding-left: 0; /* 重置内边距，以便faculty-role的缩进能够生效 */
+      display: flex;
+      align-items: flex-start;
     }
 
-   .faculty-avatar img {
-      width: 100%;
-      height: auto;
+
+    .faculty-avatar {
+      flex: 0 0 100px;
+      /* 缩小头像区域，更紧凑 */
+    }
+
+    .faculty-avatar img {
+      width: 100px;
+      height: 120px;
+      object-fit: cover;
       border-radius: 4px;
     }
 
-   .faculty-info {
+    .faculty-info {
       flex: 1;
-      line-height: 1.6; /* 适当增大行高 */
+      line-height: 1.6;
       font-family: 'Arial', sans-serif;
-      font-size: 15px; /* 增大介绍文字大小 */
+      font-size: 15px;
     }
 
-   .faculty-info h3 {
+    .faculty-info h3 {
       margin: 0 0 8px;
       color: #006600;
-      font-size: 20px; /* 增大标题文字大小 */
+      font-size: 20px;
     }
 
-   .faculty-info p {
-      margin: 6px 0; /* 适当增大段落间距 */
+    .faculty-info p {
+      margin: 6px 0;
     }
 
-   .faculty-info strong {
-      font-weight: bold; /* 重点文字加粗 */
+    .faculty-info strong {
+      font-weight: bold;
     }
 
-   .section-title {
+    
+
+    .section-title {
       color: #333;
       border-bottom: 2px solid #006600;
       padding-bottom: 8px;
@@ -110,25 +145,25 @@
     }
 
     /* 左侧导航优化 */
-   .i-pu-left {
+    .i-pu-left {
       width: 10% !important;
     }
 
-   .i-pu-year a {
+    .i-pu-year a {
       padding: 8px 0 !important;
       display: block;
       text-align: center;
     }
 
     /* 主内容区宽度调整 */
-   .main-body {
+    .main-body {
       width: 85% !important;
       margin-left: 12% !important;
     }
 
     /* 响应式适配：小屏幕自动切换为单列 */
     @media (max-width: 768px) {
-     .faculty-grid {
+      .faculty-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -154,16 +189,18 @@
                 <span class="icon-bar"></span>
               </button>
             </div>
-            <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1" style="text-align: center;margin-left: 12%">
+            <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1" style="text-align: center;margin-left: 10%">
               <ul class="nav navbar-nav text-center">
                 <li><a href="index.html">主页</a></li>
                 <li><a class="active" href="faculty.html">团队成员</a></li>
                 <li><a href="contact.html">团队介绍</a></li>
                 <li><a href="publications.html">学术论文</a></li>
                 <li><a href="patents.html">发明专利</a></li>
-                <li><a href="competition.html">学术竞赛</a></li>
+                <li><a href="competition.html">学术活动</a></li>
                 <li><a href="project.html">项目成果</a></li>
                 <li><a href="activity.html">团队建设</a></li>
+                <li><a href="environment.html">园区环境</a></li>
+                <li><a href="recruit.html">岗位招聘</a></li>
 
                 <div class="clearfix"></div>
               </ul>
@@ -176,8 +213,13 @@
   <!-- 左侧导航 -->
   <div class="i-pu-left i-fixed">
     <div class="i-pu-year-box">
-      <div class="i-pu-year check">
+      
+      
+      <div class="i-pu-year">
         <a href="#2022">导师</a>
+      </div>
+      <div class="i-pu-year">
+        <a href="#staff">职工</a>
       </div>
       <div class="i-pu-year">
         <a href="#2021">博士生</a>
@@ -195,6 +237,12 @@
     <div class="wrap">
       <div class="col-md-10">
         <div class="articles">
+          
+
+
+          
+          
+           
           <!-- 研究员板块（多列显示） -->
           <div class="faculty-section">
             <h3 id="2022" class="section-title">导师</h3>
@@ -202,10 +250,10 @@
               <!-- 刘峰 -->
               <div class="faculty-card">
                 <div class="faculty-avatar">
-                  <img src="faculty_images/liufeng.png" alt="Feng Liu">
+                  <img src="faculty_images/liufeng.jpg" alt="Feng Liu">
                 </div>
                 <div class="faculty-info">
-                  <h3>Feng Liu <span>刘峰</span></h3>
+                  <h3>Feng Liu, <span>刘峰</span></h3>
                   <p><strong>职称：</strong>正高级工程师、博士生导师</p>
                   <p><strong>主页：</strong><a href="https://people.ucas.ac.cn/~fengliu" target="_blank">https://people.ucas.ac.cn/~fengliu</a></p>
                   <p><strong>研究方向：</strong>信息对抗理论与技术，信息安全战略研究，网络攻防技术</p>
@@ -222,7 +270,7 @@
                   <img src="images/zxy.jpg" alt="Xiao-Yu Zhang">
                 </div>
                 <div class="faculty-info">
-                  <h3>Xiao-Yu Zhang <span>张晓宇</span></h3>
+                  <h3>Xiao-Yu Zhang, <span>张晓宇</span></h3>
                   <p><strong>职称：</strong>研究员、博士生导师</p>
                   <p><strong>主页：</strong><a href="https://people.ucas.edu.cn/~XYZ" target="_blank">https://people.ucas.edu.cn/~XYZ</a></p>
                   <p><strong>研究方向：</strong>人工智能与深度学习，数据内容安全，计算机视觉与多媒体</p>
@@ -240,7 +288,7 @@
                   <img src="faculty_images/shihaichao.jpg" alt="Haichao Shi">
                 </div>
                 <div class="faculty-info">
-                  <h3>Haichao Shi <span>石海超</span></h3>
+                  <h3>Haichao Shi, <span>石海超</span></h3>
                   <p><strong>职称：</strong>高级工程师、硕士生导师</p>
                   <p><strong>主页：</strong><a href="https://hcshi.github.io/" target="_blank">https://hcshi.github.io/</a></p>
                   <p><strong>研究方向：</strong>时序行为检测，行为识别，人工智能</p>
@@ -258,7 +306,7 @@
                   <img src="faculty_images/wangwen.png" alt="Wen Wang">
                 </div>
                 <div class="faculty-info">
-                  <h3>Wen Wang <span>王文</span></h3>
+                  <h3>Wen Wang,<span>王文</span></h3>
                   <p><strong>职称：</strong>高级工程师、硕士生导师</p>
                   <p><strong>主页：</strong><a href="https://people.ucas.ac.cn/~iiewangwen" target="_blank">https://people.ucas.ac.cn/~iiewangwen</a></p>
                   <p><strong>研究方向：</strong>威胁发现、加密流量分析、网络对抗</p>
@@ -275,7 +323,7 @@
                   <img src="faculty_images/wangpeng.png" alt="Peng Wang">
                 </div>
                 <div class="faculty-info">
-                  <h3>Peng Wang <span>王鹏</span></h3>
+                  <h3>Peng Wang, <span>王鹏</span></h3>
                   <p><strong>职称：</strong>高级工程师、硕士生导师</p>
                   <!-- <p><strong>主页：</strong><a href="https://people.ucas.ac.cn/~fengliu" target="_blank">https://people.ucas.ac.cn/~fengliu</a></p> -->
                   <p><strong>研究方向：</strong>威胁情报汇聚与分析、网络对抗</p>
@@ -292,7 +340,7 @@
                   <img src="faculty_images/maduohe.png" alt="Duohe Ma">
                 </div>
                 <div class="faculty-info">
-                  <h3>Duohe Ma <span>马多贺</span></h3>
+                  <h3>Duohe Ma, <span>马多贺</span></h3>
                   <p><strong>职称：</strong>副研究员、硕士生导师</p>
                   <p><strong>主页：</strong><a href="https://people.ucas.ac.cn/~mdh" target="_blank">https://people.ucas.ac.cn/~mdh</a></p>
                   <p><strong>研究方向：</strong>移动目标防御，欺骗防御，数据安全、智能对抗及网络空间反勒索</p>
@@ -309,7 +357,7 @@
                   <img src="faculty_images/wanglei.jpg" alt="Lei Wang">
                 </div>
                 <div class="faculty-info">
-                  <h3>Lei Wang <span>王雷</span></h3>
+                  <h3>Lei Wang, <span>王雷</span></h3>
                   <p><strong>职称：</strong>高级工程师、硕士生导师</p>
                   <p><strong>主页：</strong><a href="https://people.ucas.edu.cn/~0040759" target="_blank">https://people.ucas.edu.cn/~0040759</a></p>
                   <p><strong>研究方向：</strong>大数据智能分析与管理技术、身份认证与授权技术、密码应用等</p>
@@ -326,7 +374,7 @@
                   <img src="faculty_images/zhangyaqing.png" alt="Yaqin Zhang">
                 </div>
                 <div class="faculty-info">
-                  <h3>Yaqin Zhang <span>张雅勤</span></h3>
+                  <h3>Yaqin Zhang, <span>张雅勤</span></h3>
                   <p><strong>职称：</strong>高级工程师</p>
                   <!-- <p><strong>主页：</strong><a href="https://people.ucas.ac.cn/~mdh" target="_blank">https://people.ucas.ac.cn/~mdh</a></p> -->
                   <p><strong>研究方向：</strong>移动目标防御、网络攻防等</p>
@@ -342,7 +390,7 @@
                   <img src="faculty_images/chenhuashan.png" alt="Huashan Chen">
                 </div>
                 <div class="faculty-info">
-                  <h3>Huashan Chen <span>陈华山</span></h3>
+                  <h3>Huashan Chen, <span>陈华山</span></h3>
                   <p><strong>职称：</strong>副研究员、硕士生导师</p>
                   <p><strong>主页：</strong><a href="https://chenhuashancs.github.io/" target="_blank">https://chenhuashancs.github.io/</a></p>
                   <p><strong>研究方向：</strong>虚拟现实与增强现实安全，包括软件脆弱性分析与挖掘、身份认证</p>
@@ -357,10 +405,10 @@
               <!-- 章万千 -->
               <div class="faculty-card">
                 <div class="faculty-avatar">
-                  <img src="faculty_images/zhangwanqian.jpg" alt="Wanqian Zhang">
+                  <img src="faculty_images/zhangwanqian.png" alt="Wanqian Zhang">
                 </div>
                 <div class="faculty-info">
-                  <h3>Wanqian Zhang <span>章万千</span></h3>
+                  <h3>Wanqian Zhang, <span>章万千</span></h3>
                   <p><strong>职称：</strong>副研究员、硕士生导师</p>
                   <p><strong>主页：</strong><a href="https://people.ucas.ac.cn/~wanqian" target="_blank">https://people.ucas.ac.cn/~wanqian</a></p>
                   <p><strong>研究方向：</strong>多媒体分析、多模态大模型安全</p>
@@ -371,11 +419,246 @@
                 </div>
               </div>
             </div>
+          </div>
+
+                      <!-- 职工板块-->
+           <div class="faculty-section">
+            <h3 id="staff" class="section-title">职工</h3>
+            <div class="faculty-grid">
+            <!-- 业务一组-->
+             
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/zhoushuyan.png" alt="zhoushuyan">
+                </div>
+                <div class="faculty-info">
+                  <h3>Shuyan Zhou, <span>周树言</span></h3>
+                  
+                  <p>高级工程师</p>
+                  <p><strong>邮箱：</strong>zhoushuyan(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/chenyejing.png" alt="chenyejing">
+                </div>
+                <div class="faculty-info">
+                  <h3>Yejing Chen, <span>陈叶菁</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>chenyejing(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/wangweiguang.png" alt="wangweiguang">
+                </div>
+                <div class="faculty-info">
+                  <h3>Weiguang Wang, <span>王维光</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>wangweiguang(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/jiaxinhong.png" alt="jiaxinhong">
+                </div>
+                <div class="faculty-info">
+                  <h3>Xinhong Jia, <span>贾辛洪</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>jiaxinhong(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/dongxiaoming.png" alt="dongxiaoming">
+                </div>
+                <div class="faculty-info">
+                  <h3>Xiaoming Dong, <span>董晓明</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>dongxiaoming(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/zhangyaru.png" alt="zhangyaru">
+                </div>
+                <div class="faculty-info">
+                  <h3>Yaru Zhang, <span>张亚如</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>zhangyaru(at)iie.ac.cn</p>
+                </div>
+              </div>
+          
+            <!-- 业务二组-->
+
+        
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/wupengyi.png" alt="wupengyi">
+                </div>
+                <div class="faculty-info">
+                  <h3>Pengyi Wu, <span>吴鹏一</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>wupengyi(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/zhouguoqiao.png" alt="zhouguoqiao">
+                </div>
+                <div class="faculty-info">
+                  <h3>Guoqiao Zhou, <span>周国桥</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>zhouguoqiao(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/tangzhihao.png" alt="tangzhihao">
+                </div>
+                <div class="faculty-info">
+                  <h3>Zhihao Tang, <span>唐志浩</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>tangzhihao(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/chenkai.png" alt="chenkai">
+                </div>
+                <div class="faculty-info">
+                  <h3>Kai Chen, <span>陈  凯</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>chenkai(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/zhanghongrui.png" alt="zhanghongrui">
+                </div>
+                <div class="faculty-info">
+                  <h3>Hongrui Zhang, <span>张宏睿</span></h3>
+                  
+                  <p>工程师</p>
+                  <p><strong>邮箱：</strong>zhanghongrui(at)iie.ac.cn</p>
+                </div>
+              </div>
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/luoyikai.png" alt="luoyikai">
+                </div>
+                <div class="faculty-info">
+                  <h3>Yikai Luo, <span>罗怿恺</span></h3>
+                  
+                  <p>助理工程师</p>
+                  <p><strong>邮箱：</strong>luoyikai(at)iie.ac.cn</p>
+                </div>
+              </div>
+
+
+            <!-- 业务三组 -->
+            
+                
+                <div class="faculty-card">
+                  <div class="faculty-avatar">
+                    <img src="faculty_images/yaojunliang.png" alt="yaojunliang">
+                  </div>
+                  <div class="faculty-info">
+                    <h3>Junliang Yao, <span>姚军亮</span></h3>
+                    
+                    <p>工程师</p>
+                    <p><strong>邮箱：</strong>yaojunliang(at)iie.ac.cn</p>
+                  </div>
+                </div>
+                <div class="faculty-card">
+                  <div class="faculty-avatar">
+                    <img src="faculty_images/shihongqing.png" alt="shihongqing">
+                  </div>
+                  <div class="faculty-info">
+                    <h3>Hongqing Shi, <span>时红卿</span></h3>
+                    
+                    <p>工程师</p>
+                    <p><strong>邮箱：</strong>shihongqing(at)iie.ac.cn</p>
+                  </div>
+                </div>
+                <div class="faculty-card">
+                  <div class="faculty-avatar">
+                    <img src="faculty_images/xingzixuan.png" alt="xingzixuan">
+                  </div>
+                  <div class="faculty-info">
+                    <h3>Zixuan Xing, <span>邢紫璇</span></h3>
+                    
+                    <p>助理工程师</p>
+                    <p><strong>邮箱：</strong>xingzixuan(at)iie.ac.cn</p>
+                  </div>
+                </div>
+
+           
+
+              
+            
+            <!-- 业务四组 -->
+             
+              
+                <div class="faculty-card">
+                  <div class="faculty-avatar">
+                    <img src="faculty_images/penghanzhong.png" alt="penghanzhong">
+                  </div>
+                  <div class="faculty-info">
+                    <h3>Hanzhong Peng, <span>彭翰中</span></h3>
+                    
+                    <p>助理工程师</p>
+                    <p><strong>邮箱：</strong>penghanzhong(at)iie.ac.cn</p>
+                  </div>
+                </div>
+
+
+              </div>
+           </div>
+               
 
           <!-- 博士生板块（多列显示） -->
           <div class="faculty-section">
             <h3 id="2021" class="section-title">博士生</h3>
             <div class="faculty-grid"> <!-- 多列容器 -->
+              
+        
+              
+
+              <!-- 王强 -->
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/wangqiang.png" alt="Qiang Wang">
+                </div>
+                <div class="faculty-info">
+                  <h3>Qiang Wang, 王强</h3>
+                  <p><strong>年级/专业：</strong>2020级 直博 / 网络空间安全</p>
+                  <p><strong>研究方向：</strong>流量行为识别</p>
+                  <!-- <p><strong>邮箱：</strong>wangqiang3113(at)iie.ac.cn</p> -->
+                </div>
+              </div>
+
+              <!-- 缪涵 -->
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/miaohan.png" alt="Han Miao">
+                </div>
+                <div class="faculty-info">
+                  <h3>Han Miao, 缪涵</h3>
+                  <p><strong>年级/专业：</strong>2020级 直博 / 网络空间安全</p>
+                  <p><strong>研究方向：</strong>网络安全，软件安全，人工智能安全</p>
+                  <!-- <p><strong>邮箱：</strong>miaohan(at)iie.ac.cn</p> -->
+                </div>
+              </div>
 
               <!-- 谢天鸽 -->
               <div class="faculty-card">
@@ -389,34 +672,6 @@
                   <!-- <p><strong>邮箱：</strong>xietiange(at)iie.ac.cn</p> -->
                 </div>
               </div>
-
-              <!-- 赵法起 -->
-              <div class="faculty-card">
-                <div class="faculty-avatar">
-                  <img src="faculty_images/zhaofaqi.png" alt="Faqi Zhao">
-                </div>
-                <div class="faculty-info">
-                  <h3>Faqi Zhao, 赵法起</h3>
-                  <p><strong>年级/专业：</strong>2023级 普博 / 网络空间安全</p>
-                  <p><strong>研究方向：</strong>网络安全, 加密流量, 入侵检测</p>
-                  <!-- <p><strong>邮箱：</strong>zhaofaqi(at)iie.ac.cn</p> -->
-                </div>
-              </div>
-
-              <!-- 张翕如 -->
-              <div class="faculty-card">
-                <div class="faculty-avatar">
-                  <img src="faculty_images/zhangxiru.png" alt="Xiru Zhang">
-                </div>
-                <div class="faculty-info">
-                  <h3>Xiru Zhang, 张翕如</h3>
-                  <p><strong>年级/专业：</strong>2023级 普博 / 网络空间安全</p>
-                  <p><strong>研究方向：</strong>网络安全, 网络攻防</p>
-                  <!-- <p><strong>邮箱：</strong>zhangxiru(at)iie.ac.cn</p> -->
-                </div>
-              </div>
-
-
 
               <!-- 夏雨微 -->
               <div class="faculty-card">
@@ -483,6 +738,31 @@
                 </div>
               </div>
 
+              <!-- 赵法起 -->
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/zhaofaqi.png" alt="Faqi Zhao">
+                </div>
+                <div class="faculty-info">
+                  <h3>Faqi Zhao, 赵法起</h3>
+                  <p><strong>年级/专业：</strong>2023级 普博 / 网络空间安全</p>
+                  <p><strong>研究方向：</strong>网络安全, 加密流量, 入侵检测</p>
+                  <!-- <p><strong>邮箱：</strong>zhaofaqi(at)iie.ac.cn</p> -->
+                </div>
+              </div>
+
+              <!-- 张翕如 -->
+              <div class="faculty-card">
+                <div class="faculty-avatar">
+                  <img src="faculty_images/zhangxiru.png" alt="Xiru Zhang">
+                </div>
+                <div class="faculty-info">
+                  <h3>Xiru Zhang, 张翕如</h3>
+                  <p><strong>年级/专业：</strong>2023级 普博 / 网络空间安全</p>
+                  <p><strong>研究方向：</strong>网络安全, 网络攻防</p>
+                  <!-- <p><strong>邮箱：</strong>zhangxiru(at)iie.ac.cn</p> -->
+                </div>
+              </div>
 
               <!-- 刘继鹏 -->
               <div class="faculty-card">
@@ -490,85 +770,372 @@
                   <img src="faculty_images/liujipeng.jpg" alt="Jipeng Liu">
                 </div>
                 <div class="faculty-info">
-                  <h3>Jipeng Liu, 刘继鹏</h3>
+                  <h3>Jipeng Liu,  刘继鹏</h3>
                   <p><strong>年级/专业：</strong>2023级 博士 / 计算机科学与技术</p>
                   <p><strong>研究方向：</strong>深度伪造检测</p>
                   <!-- <p><strong>邮箱：</strong>liujipeng(at)iie.ac.cn</p> -->
                 </div>
               </div>
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/徐溢凡.png" alt="xuyifan">
+  </div>
+  <div class="faculty-info">
+    <h3>Yifan Xu, 徐溢凡</h3>
+    <p><strong>年级/专业：</strong>2023级 直博/ 网络空间安全</p>
+    <p><strong>研究方向：</strong>生物认证，多模态语音感知安全</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/冯悦.png" alt="fengyue">
+  </div>
+  <div class="faculty-info">
+    <h3>Yue Feng, 冯悦</h3>
+    <p><strong>年级/专业：</strong>2023级 直博/ 网络空间安全</p>
+    <p><strong>研究方向：</strong>生物认证</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/黄梓晟.png" alt="Huang Zisheng">
+  </div>
+  <div class="faculty-info">
+    <h3>Zisheng Huang, 黄梓晟</h3>
+    <p><strong>年级/专业：</strong>2023级 硕转博/ 网络空间安全</p>
+    <p><strong>研究方向：</strong>软件安全</p>
+  </div>
+</div>
+
+              <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/xingsiyu.png" alt="Siyu Xing">
+      </div>
+      <div class="faculty-info">
+        <h3>Siyu Xing,  邢思雨</h3>
+        <p><strong>年级/专业：</strong>2024级 硕转博 / 计算机应用技术</p>
+        <p><strong>研究方向：</strong>计算机视觉, 模式识别</p>
+        
+      </div>
+    </div>
+    <div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/daiguangxiang.png" alt="daiguangxiang">
+  </div>
+  <div class="faculty-info">
+    <h3>Guangxiang Dai, 戴光祥</h3>
+    <p><strong>年级/专业：</strong>2024级 硕转博 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>网络威胁情报</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/江俊烨.jpg" alt="jiangjunye">
+  </div>
+  <div class="faculty-info">
+    <h3>Junye Jiang, 江俊烨</h3>
+    <p><strong>年级/专业：</strong>2024级 硕转博 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>人工智能在主动防御中的应用</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/俱硕.png" alt="jushuo">
+  </div>
+  <div class="faculty-info">
+    <h3>Shuo Ju,俱硕</h3>
+    <p><strong>年级/专业：</strong>2024级 博士 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>人工智能安全</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/陈鸿.png" alt="chengong">
+  </div>
+  <div class="faculty-info">
+    <h3>Hong Chen,陈鸿</h3>
+    <p><strong>年级/专业：</strong>2024级 博士 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>AR安全与隐私</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/吉文轩.png" alt="Ji Wenxuan">
+  </div>
+  <div class="faculty-info">
+    <h3>Wenxuan Ji, 吉文轩</h3>
+    <p><strong>年级/专业：</strong>2024级 直博 / 计算机应用技术</p>
+    <p><strong>研究方向：</strong>计算机视觉</p>
+  </div>
+</div>
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/熊欣.jpeg" alt="Xiong Xin">
+  </div>
+  <div class="faculty-info">
+    <h3>Xin Xiong, 熊欣</h3>
+    <p><strong>年级/专业：</strong>2024级 直博 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>大模型安全</p>
+  </div>
+</div>
+  <div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/庞森元.jpg" alt="Pan Senyuan">
+  </div>
+  <div class="faculty-info">
+    <h3>Senyuan Pan, 庞森元</h3>
+    <p><strong>年级/专业：</strong>2025级 普博 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>加密流量分析</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/元国戎.jpeg" alt="Yuan Guorong">
+  </div>
+  <div class="faculty-info">
+    <h3>Guorong Yuan, 元国戎</h3>
+    <p><strong>年级/专业：</strong>2025级 普博 / 计算机应用技术</p>
+    <p><strong>研究方向：</strong>计算机视觉</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/李文轩.jpeg" alt="liwenxuan">
+  </div>
+  <div class="faculty-info">
+    <h3>Wenxuan Li, 李文轩</h3>
+    <p><strong>年级/专业：</strong>2025级 直博 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>//</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/仲东维.jpeg" alt="Zhong Dongwei">
+  </div>
+  <div class="faculty-info">
+    <h3>Dongwei Zhong, 仲东维</h3>
+    <p><strong>年级/专业：</strong>2025级 普博 / 计算机应用技术</p>
+    <p><strong>研究方向：</strong>谣言检测</p>
+  </div>
+</div>
             </div>
           </div>
-
 
 <!-- 硕士生板块（多列显示） -->
 <div class="faculty-section">
   <h3 id="2020" class="section-title">硕士生</h3>
   <div class="faculty-grid"> <!-- 多列容器 -->
-    <!-- 陈思达 -->
-    <div class="faculty-card">
-      <div class="faculty-avatar">
-        <img src="faculty_images/chensida.png" alt="Sida Chen">
-      </div>
-      <div class="faculty-info">
-        <h3>Sida Chen, 陈思达</h3>
-        <p><strong>年级/专业：</strong>2021级 硕士 / 网络空间安全（电子信息）</p>
-        <p><strong>研究方向：</strong>样本分析，软件安全</p>
-        <!-- <p><strong>邮箱：</strong>chensida(at)iie.ac.cn</p> -->
-      </div>
-    </div>
 
-    <!-- 徐金鹏 -->
-    <div class="faculty-card">
+    
+
+<div class="faculty-card">
       <div class="faculty-avatar">
-        <img src="faculty_images/xujinpeng.png" alt="Jinpeng Xu">
+        <img src="faculty_images/yangc.jpg" alt="Chen Yang">
       </div>
       <div class="faculty-info">
-        <h3>Jinpeng Xu, 徐金鹏</h3>
-        <p><strong>年级/专业：</strong>2021级 硕士 / 网络空间安全（电子信息）</p>
-        <p><strong>研究方向：</strong>威胁检测</p>
-        <!-- <p><strong>邮箱：</strong>xujinpeng(at)iie.ac.cn</p> -->
+        <h3>Chen Yang, 杨琛</h3>
+        <p><strong>年级/专业：</strong>2023级 硕士 / 电子信息</p>
+        <p><strong>研究方向：</strong>计算机视觉</p>
+        
       </div>
     </div>
 
 
 
-    <!-- 张炜超 -->
+
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/于琪嘉.jpeg" alt="Yu Qijia">
+  </div>
+  <div class="faculty-info">
+    <h3>Qijia Yu, 于骐嘉</h3>
+    <p><strong>年级/专业：</strong>2024级 学硕 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>//</p>
+  </div>
+</div>
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/谭震鲁.jpg" alt="Tan Zhenlu">
+  </div>
+  <div class="faculty-info">
+    <h3>Zhenlu Tan, 谭震鲁</h3>
+    <p><strong>年级/专业：</strong>2024级 学硕 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>//</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/金翔宇.jpg" alt="Jin Xiangyu">
+  </div>
+  <div class="faculty-info">
+    <h3>Xiangyu Jin,金翔宇</h3>
+    <p><strong>年级/专业：</strong>2024级 学硕 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>网络威胁检测</p>
+  </div>
+</div>
+
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/李庆森.png" alt="liqingsen">
+  </div>
+  <div class="faculty-info">
+    <h3>Qingsen Li, 李庆森</h3>
+    <p><strong>年级/专业：</strong>2024级 硕士 / 网络与信息安全</p>
+    <p><strong>研究方向：</strong>人工智能安全</p>
+  </div>
+</div>
+
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/陈书桓.jpeg" alt="Chen Shuhuan">
+  </div>
+  <div class="faculty-info">
+    <h3>Shuhuan Chen, 陈书桓</h3>
+    <p><strong>年级/专业：</strong>2024级 专硕 / 网络与信息安全</p>
+    <p><strong>研究方向：</strong>视频时序定位</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/周佳慧.jpg" alt="zhoujiahui">
+  </div>
+  <div class="faculty-info">
+    <h3>Jiahui Zhou, 周佳慧</h3>
+    <p><strong>年级/专业：</strong>2024级 学硕/ 计算机应用技术</p>
+    <p><strong>研究方向：</strong>网络威胁情报</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/付天华.jpg" alt="Fu Tianhua">
+  </div>
+  <div class="faculty-info">
+    <h3>Tianhua Fu, 付天华</h3>
+    <p><strong>年级/专业：</strong>2024级 专硕 / 网络与信息安全</p>
+    <p><strong>研究方向：</strong>渗透测试</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/黄雯洁.jpg" alt="Huang Wenjie">
+  </div>
+  <div class="faculty-info">
+    <h3>Wenjie Huang, 黄雯洁</h3>
+    <p><strong>年级/专业：</strong>2024级 专硕 / 网络与信息安全</p>
+    <p><strong>研究方向：</strong>物联网安全</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/徐开豪.jpg" alt="Xu Kaihao">
+  </div>
+  <div class="faculty-info">
+    <h3>Kaihao Xu, 徐开豪</h3>
+    <p><strong>年级/专业：</strong>2024级 专硕 / 网络与信息安全</p>
+    <p><strong>研究方向：</strong>WEB安全，网络攻防</p>
+  </div>
+</div>
+
+
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/鲁亮.jpeg" alt="luliang">
+  </div>
+  <div class="faculty-info">
+    <h3>Liang Lu, 鲁亮</h3>
+    <p><strong>年级/专业：</strong>2025级 学硕 / 计算机应用技术</p>
+    <p><strong>研究方向：</strong>//</p>
+  </div>
+</div>
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/谭哲文.png" alt="tanzhewen">
+  </div>
+  <div class="faculty-info">
+    <h3>Zhewen Tan, 谭哲文</h3>
+    <p><strong>年级/专业：</strong>2025级 学硕 / 网络空间安全</p>
+    <p><strong>研究方向：</strong>大模型</p>
+  </div>
+</div>
+
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/何逸.jpeg" alt="heyi">
+  </div>
+  <div class="faculty-info">
+    <h3>Yi He, 何逸</h3>
+    <p><strong>年级/专业：</strong>2025级 专硕 / 网络与信息安全</p>
+    <p><strong>研究方向：</strong>自动化渗透测试</p>
+  </div>
+</div>
+
+
+
+<div class="faculty-card">
+  <div class="faculty-avatar">
+    <img src="faculty_images/张程淋.jpeg" alt="Zhang Chenglin">
+  </div>
+  <div class="faculty-info">
+    <h3>Chenglin Zhang, 张程淋</h3>
+    <p><strong>年级/专业：</strong>2025级 专硕 / 网络与信息安全</p>
+    <p><strong>研究方向：</strong>大模型安全</p>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+<!-- 毕业生板块（多列显示） -->
+
+<div class="faculty-section">
+  <h3 id="grad" class="section-title">毕业生</h3>
+  <div class="faculty-grid"> <!-- 多列容器 -->
+
     <div class="faculty-card">
       <div class="faculty-avatar">
         <img src="faculty_images/zhangweichao.png" alt="Weichao Zhang">
       </div>
       <div class="faculty-info">
         <h3>Weichao Zhang, 张炜超</h3>
-        <p><strong>年级/专业：</strong>2022级 硕士 / 电子信息</p>
-        <p><strong>研究方向：</strong>网络攻防技术</p>
+        <p><strong>年级/专业：</strong>2022级 专硕 / 电子信息</p>
+        <p><strong>毕业去向：</strong>计算所（读博）</p>
+        <p><strong>类型：</strong>研究所</p>
         <!-- <p><strong>邮箱：</strong>zhangweichao(at)iie.ac.cn</p> -->
       </div>
     </div>
 
-    <!-- 邢思雨 -->
+    <!-- 史蓉 -->
     <div class="faculty-card">
       <div class="faculty-avatar">
-        <img src="faculty_images/xingsiyu.png" alt="Siyu Xing">
+        <img src="faculty_images/shirong.png" alt="Rong Shi">
       </div>
       <div class="faculty-info">
-        <h3>Siyu Xing, 邢思雨</h3>
-        <p><strong>年级/专业：</strong>2022级 硕士 / 计算机应用技术</p>
-        <p><strong>研究方向：</strong>计算机视觉, 模式识别</p>
-        <!-- <p><strong>邮箱：</strong>xingsiyu(at)iie.ac.cn</p> -->
-      </div>
-    </div>
-
-
-    <!-- 戴光祥 -->
-    <div class="faculty-card">
-      <div class="faculty-avatar">
-        <img src="faculty_images/daiguangxiang.png" alt="Guangxiang Dai">
-      </div>
-      <div class="faculty-info">
-        <h3>Guangxiang Dai, 戴光祥</h3>
-        <p><strong>年级/专业：</strong>2022级 学硕 / 网络空间安全</p>
-        <p><strong>研究方向：</strong>威胁情报</p>
-        <!-- <p><strong>邮箱：</strong>daiguangxiang(at)iie.ac.cn</p> -->
+        <h3>Rong Shi, 史蓉</h3>
+        <p><strong>年级/专业：</strong>2022级 专硕 / 网络空间安全（电子信息）</p>
+        <p><strong>毕业去向：</strong>百度</p>
+        <p><strong>类型：</strong>大厂</p>
+        <!-- <p><strong>邮箱：</strong>shirong2022(at)iie.ac.cn</p> -->
       </div>
     </div>
 
@@ -579,124 +1146,12 @@
       </div>
       <div class="faculty-info">
         <h3>Wenwu Xu, 徐文武</h3>
-        <p><strong>年级/专业：</strong>2022级 硕士 / 网络空间安全</p>
-        <p><strong>研究方向：</strong>人工智能安全</p>
+        <p><strong>年级/专业：</strong>2022级 学硕 / 网络空间安全</p>
+        <p><strong>毕业去向：</strong>信工所（读博）</p>
+        <p><strong>类型：</strong>研究所</p>
         <!-- <p><strong>邮箱：</strong>xuwenwu(at)iie.ac.cn</p> -->
       </div>
     </div>
-
-    <!-- 杨琛 -->
-    <div class="faculty-card">
-      <div class="faculty-avatar">
-        <img src="faculty_images/yangc.jpg" alt="Chen Yang">
-      </div>
-      <div class="faculty-info">
-        <h3>Chen Yang, 杨琛</h3>
-        <p><strong>年级/专业：</strong>2023级 硕士 / 电子信息</p>
-        <p><strong>研究方向：</strong>计算机视觉</p>
-        <!-- <p><strong>邮箱：</strong>yangchen2023(at)iie.ac.cn</p> -->
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 毕业生板块（多列显示） -->
-<div class="faculty-section">
-  <h3 id="grad" class="section-title">毕业生</h3>
-  <div class="faculty-grid"> <!-- 多列容器 -->
-    <!-- 汤子贤 -->
-    <div class="faculty-card">
-      <div class="faculty-avatar">
-        <img src="faculty_images/tangzixian.png" alt="Zixian Tang">
-      </div>
-      <div class="faculty-info">
-        <h3>Zixian Tang, 汤子贤</h3>
-        <p><strong>年级/专业：</strong>2018级 硕博 / 网络空间安全</p>
-        <p><strong>研究方向：</strong>网络攻防</p>
-        <!-- <p><strong>邮箱：</strong>tangzixian(at)iie.ac.cn</p> -->
-      </div>
-    </div>
-
-    <!-- 贾锟 -->
-    <div class="faculty-card">
-      <div class="faculty-avatar">
-        <img src="faculty_images/jiakun.png" alt="Kun Jia">
-      </div>
-      <div class="faculty-info">
-        <h3>Kun Jia, 贾锟</h3>
-        <p><strong>年级/专业：</strong>2016级 直博 / 网络空间安全</p>
-        <p><strong>研究方向：</strong>网络安全，僵尸网络，SDN网络，DDoS</p>
-        <!-- <p><strong>邮箱：</strong>jiakun(at)iie.ac.cn</p> -->
-      </div>
-    </div>
-
-    <!-- 刘家志 -->
-    <div class="faculty-card">
-      <div class="faculty-avatar">
-        <img src="faculty_images/liujiazhi.png" alt="Jiazhi Liu">
-      </div>
-      <div class="faculty-info">
-        <h3>Jiazhi Liu, 刘家志</h3>
-        <p><strong>年级/专业：</strong>2016级 硕博 / 网络空间安全</p>
-        <p><strong>研究方向：</strong>视觉安全, 新型显示, 立体匹配</p>
-        <!-- <p><strong>邮箱：</strong>liujiazhi(at)iie.ac.cn</p> -->
-      </div>
-    </div>
-
-    <!-- 杨梓铭 -->
-    <div class="faculty-card">
-      <div class="faculty-avatar">
-        <img src="faculty_images/yangziming.png" alt="Ziming Yang">
-      </div>
-      <div class="faculty-info">
-        <h3>Ziming Yang, 杨梓铭</h3>
-        <p><strong>年级/专业：</strong>2020级 硕士 / 计算机应用技术</p>
-        <p><strong>研究方向：</strong>计算机视觉, 模式识别, 生物特征安全</p>
-        <!-- <p><strong>邮箱：</strong>yangziming(at)iie.ac.cn</p> -->
-      </div>
-    </div>
-
-    <!-- 张斌 -->
-    <div class="faculty-card">
-      <div class="faculty-avatar">
-        <img src="faculty_images/zhangbin.png" alt="Bin Zhang">
-      </div>
-      <div class="faculty-info">
-        <h3>Bin Zhang, 张斌</h3>
-        <p><strong>年级/专业：</strong>2021级 学硕 / 计算机应用技术</p>
-        <p><strong>研究方向：</strong>深度学习, 计算机视觉, 活体检测</p>
-        <!-- <p><strong>邮箱：</strong>zhangbin1998(at)iie.ac.cn</p> -->
-      </div>
-    </div>
-
-    <!-- 李文灏 -->
-    <div class="faculty-card">
-      <div class="faculty-avatar">
-        <img src="faculty_images/lwh.jpg" alt="Wenhao Li">
-      </div>
-      <div class="faculty-info">
-        <h3>Wenhao Li, 李文灏</h3>
-        <p><strong>年级/专业：</strong>2019级 硕博 / 网络空间安全</p>
-        <p><strong>研究方向：</strong>网络安全，软件安全，人工智能安全</p>
-        <!-- <p><strong>邮箱：</strong>liwenhao(at)iie.ac.cn</p> -->
-      </div>
-    </div>
-
-
-                  <!-- 鲍怀锋 -->
-              <div class="faculty-card">
-                <div class="faculty-avatar">
-                  <img src="faculty_images/baohuaifeng.png" alt="Huaifeng Bao">
-                </div>
-                <div class="faculty-info">
-                  <h3>Huaifeng Bao, 鲍怀锋</h3>
-                  <p><strong>年级/专业：</strong>2019级 直博 / 网络空间安全</p>
-                  <p><strong>研究方向：</strong>网络安全, 恶意代码, 终端威胁检测</p>
-                  <!-- <p><strong>邮箱：</strong>baohuaifeng(at)iie.ac.cn</p> -->
-                </div>
-              </div>
-
-
 
     <!-- 张凯薇 -->
     <div class="faculty-card">
@@ -705,26 +1160,172 @@
       </div>
       <div class="faculty-info">
         <h3>Kaiwei Zhang, 张凯薇</h3>
-        <p><strong>年级/专业：</strong>2022级 硕士 / 网络空间安全</p>
-        <p><strong>研究方向：</strong>深度学习，图神经网络</p>
+        <p><strong>年级/专业：</strong>2022级 学硕 / 网络空间安全</p>
+        <p><strong>毕业去向：</strong>书行科技有限公司</p>
+        <p><strong>类型：</strong>其他</p>
         <!-- <p><strong>邮箱：</strong>zhangkaiwei(at)iie.ac.cn</p> -->
       </div>
     </div>
 
-        <!-- 史蓉 -->
     <div class="faculty-card">
       <div class="faculty-avatar">
-        <img src="faculty_images/shirong.png" alt="Rong Shi">
+        <img src="faculty_images/yangziming.png" alt="yangziming">
       </div>
       <div class="faculty-info">
-        <h3>Rong Shi, 史蓉</h3>
-        <p><strong>年级/专业：</strong>2022级 专硕 / 网络空间安全（电子信息）</p>
-        <p><strong>研究方向：</strong>网络安全, 软件安全, 人工智能安全</p>
-        <!-- <p><strong>邮箱：</strong>shirong2022(at)iie.ac.cn</p> -->
+        <h3>Ziming Yang, 杨梓铭</h3>
+        <p><strong>年级/专业：</strong>2021级 学硕 / 计算机应用技术</p>
+        <p><strong>毕业去向：</strong>外交部</p>
+        <p><strong>类型：</strong>公务员</p>
       </div>
     </div>
 
-    <!-- 王星宇 -->
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/zhangbin.png" alt="Bin Zhang">
+      </div>
+      <div class="faculty-info">
+        <h3>Bin Zhang, 张斌</h3>
+        <p><strong>年级/专业：</strong>2021级 学硕 / 计算机应用技术</p>
+        <p><strong>毕业去向：</strong>南网超高压输电公司</p>
+        <p><strong>类型：</strong>国企</p>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/zhangyaru.png" alt="zhangyaru">
+      </div>
+      <div class="faculty-info">
+        <h3>Yaru Zhang, 张亚如</h3>
+        <p><strong>年级/专业：</strong>2022级 学硕 / 网络空间安全</p>
+        <p><strong>毕业去向：</strong>信工所（工作）</p>
+        <p><strong>类型：</strong>研究所</p>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/lwh.jpg" alt="Wenhao Li">
+      </div>
+      <div class="faculty-info">
+        <h3>Wenhao Li, 李文灏</h3>
+        <p><strong>年级/专业：</strong>2019级 硕博 / 网络空间安全</p>
+        <p><strong>毕业去向：</strong>中国电信研究院</p>
+        <p><strong>类型：</strong>国企</p>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/tangzixian.png" alt="Zixian Tang">
+      </div>
+      <div class="faculty-info">
+        <h3>Zixian Tang, 汤子贤</h3>
+        <p><strong>年级/专业：</strong>2018级 硕博 / 网络空间安全</p>
+        <p><strong>毕业去向：</strong>中关村实验室</p>
+        <p><strong>类型：</strong>事业单位</p>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/baohuaifeng.png" alt="Huaifeng Bao">
+      </div>
+      <div class="faculty-info">
+        <h3>Huaifeng Bao, 鲍怀锋</h3>
+        <p><strong>年级/专业：</strong>2019级 直博 / 网络空间安全</p>
+        <p><strong>毕业去向：</strong>腾讯</p>
+        <p><strong>类型：</strong>大厂</p>
+      </div>
+      </div>
+    
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/chensida.png" alt="Sida Chen">
+      </div>
+      <div class="faculty-info">
+        <h3>Sida Chen, 陈思达</h3>
+        <p><strong>年级/专业：</strong>2021级 专硕 / 网络空间安全（电子信息）</p>
+        <p><strong>毕业去向：</strong>天翼云</p>
+        <p><strong>类型：</strong>央企</p>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/xujinpeng.png" alt="Jinpeng Xu">
+      </div>
+      <div class="faculty-info">
+        <h3>Jinpeng Xu, 徐金鹏</h3>
+        <p><strong>年级/专业：</strong>2021级 专硕 / 网络空间安全（电子信息）</p>
+        <p><strong>毕业去向：</strong>中国农业发展银行软件开发中心</p>
+        <p><strong>类型：</strong>央企</p>
+      </div>
+    </div>
+    
+      <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/tangzhimin.png" alt="tangzhimin">
+      </div>
+      <div class="faculty-info">
+        <h3>Zhimin Tang, 唐志敏</h3>
+        <p><strong>年级/专业：</strong>2021级 专硕 / 网络空间安全（电子信息）</p>
+        <p><strong>毕业去向：</strong>中国光大银行</p>
+        <p><strong>类型：</strong>国企</p>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/caiweixia.png" alt="Weixia Cai">
+      </div>
+      <div class="faculty-info">
+        <h3>Weixia Cai, 蔡伟霞</h3>
+        <p><strong>年级/专业：</strong>2018级 硕博 / 网络空间安全</p>
+        <p><strong>毕业去向：</strong>中移（上海）信息通信科技有限公司</p>
+        <p><strong>类型：</strong>国企</p>
+      </div>
+    </div>
+
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/jiakun.png" alt="Kun Jia">
+      </div>
+      <div class="faculty-info">
+        <h3>Kun Jia, 贾锟</h3>
+        <p><strong>年级/专业：</strong>2016级 直博 / 网络空间安全</p>
+        <p><strong>研究方向：</strong>网络安全，僵尸网络，SDN网络，DDoS</p>
+        
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/liujiazhi.png" alt="Jiazhi Liu">
+      </div>
+      <div class="faculty-info">
+        <h3>Jiazhi Liu, 刘家志</h3>
+        <p><strong>年级/专业：</strong>2016级 硕博 / 网络空间安全</p>
+        <p><strong>研究方向：</strong>视觉安全, 新型显示, 立体匹配</p>
+        
+      </div>
+    </div>
+    
+
+    <div class="faculty-card">
+      <div class="faculty-avatar">
+        <img src="faculty_images/yinpeng.png" alt="Peng Yin">
+      </div>
+      <div class="faculty-info">
+        <h3>Peng Yin, 尹鹏</h3>
+        <p><strong>年级/专业：</strong>2021级 博士 / 网络空间安全</p>
+        <p><strong>研究方向：</strong>电磁空间安全，信息与信号处理</p>
+        
+      </div>
+    </div>
+
     <div class="faculty-card">
       <div class="faculty-avatar">
         <img src="faculty_images/wangxingyu.png" alt="Xingyu Wang">
@@ -733,11 +1334,11 @@
         <h3>Xingyu Wang, 王星宇</h3>
         <p><strong>年级/专业：</strong>2022级 硕士 / 网络空间安全（电子信息）</p>
         <p><strong>研究方向：</strong>威胁检测, 流量分析, 软件安全</p>
-        <!-- <p><strong>邮箱：</strong>wangxingyu(at)iie.ac.cn</p> -->
+        
       </div>
     </div>
 
-    <!-- 胡晓伟 -->
+  
     <div class="faculty-card">
       <div class="faculty-avatar">
         <img src="faculty_images/huxiaowei.png" alt="Xiaowei Hu">
@@ -746,73 +1347,18 @@
         <h3>Xiaowei Hu, 胡晓伟</h3>
         <p><strong>年级/专业：</strong>2022级 硕士 / 网络空间安全</p>
         <p><strong>研究方向：</strong>网络安全, 软件安全, 人工智能安全</p>
-        <!-- <p><strong>邮箱：</strong>huxiaowei(at)iie.ac.cn</p> -->
+        
       </div>
     </div>
-              <!-- 张亚如 -->
-              <div class="faculty-card">
-                <div class="faculty-avatar">
-                  <img src="faculty_images/zhangyaru.png" alt="Yaru Zhang">
-                </div>
-                <div class="faculty-info">
-                  <h3>Yaru Zhang, 张亚如</h3>
-                  <p><strong>年级/专业：</strong>2019级 硕博 / 计算机应用技术</p>
-                  <p><strong>研究方向：</strong>模式识别, 深度学习, 时序行为检测</p>
-                  <!-- <p><strong>邮箱：</strong>zhangyaru(at)iie.ac.cn</p> -->
-                </div>
-              </div>
 
-              <!-- 王强 -->
-              <div class="faculty-card">
-                <div class="faculty-avatar">
-                  <img src="faculty_images/wangqiang.png" alt="Qiang Wang">
-                </div>
-                <div class="faculty-info">
-                  <h3>Qiang Wang, 王强</h3>
-                  <p><strong>年级/专业：</strong>2020级 直博 / 网络空间安全</p>
-                  <p><strong>研究方向：</strong>流量行为识别</p>
-                  <!-- <p><strong>邮箱：</strong>wangqiang3113(at)iie.ac.cn</p> -->
-                </div>
-              </div>
 
-              <!-- 缪涵 -->
-              <div class="faculty-card">
-                <div class="faculty-avatar">
-                  <img src="faculty_images/miaohan.png" alt="Han Miao">
-                </div>
-                <div class="faculty-info">
-                  <h3>Han Miao, 缪涵</h3>
-                  <p><strong>年级/专业：</strong>2020级 直博 / 网络空间安全</p>
-                  <p><strong>研究方向：</strong>网络安全，软件安全，人工智能安全</p>
-                  <!-- <p><strong>邮箱：</strong>miaohan(at)iie.ac.cn</p> -->
-                </div>
-              </div>
 
-              <!-- 尹鹏 -->
-              <div class="faculty-card">
-                <div class="faculty-avatar">
-                  <img src="faculty_images/yinpeng.png" alt="Peng Yin">
-                </div>
-                <div class="faculty-info">
-                  <h3>Peng Yin, 尹鹏</h3>
-                  <p><strong>年级/专业：</strong>2021级 博士 / 网络空间安全</p>
-                  <p><strong>研究方向：</strong>电磁空间安全，信息与信号处理</p>
-                  <!-- <p><strong>邮箱：</strong>yinpeng(at)iie.ac.cn</p> -->
-                </div>
-              </div>
-              <!-- 蔡伟霞 -->
-              <div class="faculty-card">
-                <div class="faculty-avatar">
-                  <img src="faculty_images/caiweixia.png" alt="Weixia Cai">
-                </div>
-                <div class="faculty-info">
-                  <h3>Weixia Cai, 蔡伟霞</h3>
-                  <p><strong>年级/专业：</strong>2018级 硕博 / 网络空间安全</p>
-                  <p><strong>研究方向：</strong>网络安全，渗透测试，智能规划</p>
-                  <!-- <p><strong>邮箱：</strong>caiweixia(at)iie.ac.cn</p> -->
-                </div>
-              </div>
 
 
   </div>
 </div>
+
+        </div>
+      </div>
+    </div>
+  </div>

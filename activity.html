@@ -91,7 +91,44 @@
         border-bottom: 2px solid #ddd;
         color: #555;
     }
+
+.image-layout {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-large img {
+  width: 100%;
+  height: 98%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.right-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 5px; /* 控制行列间距 */
+}
+
+.right-grid img {
+  width: 100%;
+  height: 95% ;
+  /*aspect-ratio: 1 / 1;  */  
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+
 </style>
+
+
 </head>
 
 <body>
@@ -117,7 +154,7 @@
             </div>
             <!--/.navbar-header-->
         
-            <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1" style="text-align: center;margin-left: 12%">
+            <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1" style="text-align: center;margin-left: 10%">
                 <ul class="nav navbar-nav text-center" style="text-align: center;">
                      <li ><a href="index.html">主页</a></li>
                     
@@ -125,9 +162,12 @@
                     <li><a href="contact.html">团队介绍</a></li>
                     <li><a  href="publications.html">学术论文</a></li>
                     <li><a  href="patents.html">发明专利</a></li>
-                    <li><a href="competition.html">学术竞赛</a></li>
-                      <li><a  href="project.html">项目成果</a></li>
+                    <li><a href="competition.html">学术活动</a></li>
+                    <li><a  href="project.html">项目成果</a></li>
                     <li><a class="active"  href="publications.html">团队建设</a></li> 
+                    <li><a href="environment.html">园区环境</a></li>
+                    <li><a href="recruit.html">岗位招聘</a></li>
+                    
                     
                     <div class="clearfix"></div>
                 </ul>
@@ -146,8 +186,9 @@
 <div class="i-pu-left i-fixed">
                     <div class="i-pu-year-box">
                             <div class="i-pu-year check">
-                                <a href="#团建活动">&nbsp;团建活动</a>
-                            </div>                   	
+                                <a href="#团建活动">&nbsp;文化建设</a>
+                            </div>
+							              	
                             <div class="i-pu-year check">
                                 <a href="#荣誉之星">&nbsp;荣誉之星</a>
                             </div>
@@ -160,19 +201,24 @@
             <div class="col-md-10 ">
                 <div class="articles">
                     <header>
-<h3 id="团建活动" class="title-head">团队日常</h3>
+<h3 id="团建活动" class="title-head">文化建设</h3>
 </header>
 <div class="article_last">
     <div class="article-left" style="width: 100%; margin-left: 0%;">
         <!-- 使用网格布局实现2x2排列 -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+        
             <img src="images/wenhuajianshe.png" style="width: 100%; height: auto; object-fit: cover;">
-            <img src="images/Annual_meeting20240127.jpg" style="width: 100%; height: auto; object-fit: cover;">
-            <img src="images/dabian2024.jpg" style="width: 100%; height: auto; object-fit: cover;">
-            <img src="images/biye2024.jpg" style="width: 100%; height: auto; object-fit: cover;">
+			<br>
+			<br>
+			<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <img src="images/Annual_meeting20240127.jpg" style="width: 100%; height: 200px; object-fit: cover;">
+            <img src="images/dabian2024.jpg" style="width: 100%; height: 200px; object-fit: cover;">
+            <img src="images/biye2024.jpg" style="width: 100%; height: 200px; object-fit: cover;">
+			</div>
         </div>
+		<div class="clearfix"></div>
     </div>
-</div>
+
 <!--                         <div class="article-right">
                             <div class="article-text" style="font-size: 120%;">
                                 <p class="contact_p">研究方向和内容规划瞄准国家战略，面向领域亟需，紧扣行业热点。以现实任务为驱动，采用三元培养模式--战略、工程、技术三位一体的网安新工科人才培养模式，以综合能力为评价标准，培养具有战略视野高度、重大工程规划和前沿技术创新能力的专业型与综合型网络安全人才。</p>
@@ -184,12 +230,12 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div> -->
-                        <div class="clearfix"></div>
-                    </div>
+                        
 
                     <header>
                         <h3 id="荣誉之星" class="title-head">荣誉之星</h3>
                     </header>
+					<br>
 
 <!-- 2025第二季度 -->
 <div class="quarter-container">
@@ -308,7 +354,7 @@
                                     吉文轩同学课程学习勤奋刻苦，注重基础理论知识积累与科研能力培养...
                                     <span class="collapse-button" onclick="toggleComment(this)">展开</span>
                                     <div class="hidden-comment">
-                                        研一集中学习阶段，在人物交互动作检测方向积极开展前沿研究，形成具有创新性、先进性的研究方案。同时，该同学积极参加学术竞赛与系统研发，将关键技术运用于解决实际业务需求，有力支撑了项目实施与交付。希望吉文轩同学持续进取，聚焦研究方向进一步深入求索，形成更多高水平成果。
+                                        研一集中学习阶段，在人物交互动作检测方向积极开展前沿研究，形成具有创新性、先进性的研究方案。同时，该同学积极参加学术活动与系统研发，将关键技术运用于解决实际业务需求，有力支撑了项目实施与交付。希望吉文轩同学持续进取，聚焦研究方向进一步深入求索，形成更多高水平成果。
                                     </div>
                                 </div>
                             </div>
@@ -375,7 +421,7 @@
                                     陈书桓同学基础理论功底扎实，研一集中学习阶段充分利用课余时间...
                                     <span class="collapse-button" onclick="toggleComment(this)">展开</span>
                                     <div class="hidden-comment">
-                                        积极开展前沿技术攻关，在深度伪造检测方向开展前沿研究，论文成果被高水平学术会议接收，为后续开展进一步研究确立了较高起点。此外，该同学积极参加学术竞赛，通过持续优化升级在深伪检测赛题中取得最优结果，形成先进技术成果。希望陈书桓同学再接再厉、砥砺前行，努力实现更多高质量研究成果。
+                                        积极开展前沿技术攻关，在深度伪造检测方向开展前沿研究，论文成果被高水平学术会议接收，为后续开展进一步研究确立了较高起点。此外，该同学积极参加学术活动，通过持续优化升级在深伪检测赛题中取得最优结果，形成先进技术成果。希望陈书桓同学再接再厉、砥砺前行，努力实现更多高质量研究成果。
                                     </div>
                                 </div>
                             </div>
