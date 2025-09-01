@@ -56,7 +56,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   margin: 0;
   padding: 0;
 }
-
+/* 响应式调整：在小屏幕上优化布局 */
+@media (max-width: 768px) {
+    .article-left {
+        justify-content: center !important; /* 小屏幕下改为居中 */
+    }
+	.image-title{
+        justify-content: center !important; 
+    }
+}
 </style>
 </head>
 
