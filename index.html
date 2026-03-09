@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>无法访问此网页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      /* background: #f1f1f1; */
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .error-box {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      padding: 40px 25px;
+      border-radius: 6px;
+      /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+      text-align: center;
+    }
+
+    .error-icon {
+      font-size: 50px;
+      color: #d93025;
+      margin-bottom: 20px;
+    }
+
+    .error-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #202124;
+      margin-bottom: 12px;
+    }
+
+    .error-tip {
+      font-size: 15px;
+      color: #5f6368;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .error-btn {
+      padding: 9px 18px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .refresh-btn {
+      background: #4285f4;
+      color: #fff;
+    }
+
+    .refresh-btn:hover {
+      background: #3367d6;
+    }
+
+    .back-btn {
+      background: #f8f9fa;
+      color: #3c4043;
+    }
+
+    .back-btn:hover {
+      background: #e8eaed;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="error-box">
+    <!-- 核心错误图标 -->
+    <div class="error-icon">⚠️</div>
+    <!-- 错误标题 -->
+    <h2 class="error-title">无法访问此网页</h2>
+    <!-- 简要提示 -->
+    <p class="error-tip">请检查您的网络连接，或确认网址是否正确。</p>
+    <!-- 必要操作按钮 -->
+    <div class="btn-group">
+      <button class="error-btn refresh-btn" onclick="window.location.reload()">刷新</button>
+      <button class="error-btn back-btn" onclick="window.history.back()">返回上一页</button>
+    </div>
+  </div>
+</body>
+
+</html>
