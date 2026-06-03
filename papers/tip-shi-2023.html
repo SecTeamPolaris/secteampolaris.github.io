@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Publication--tip-shi-2023</title>
+<link href="../css/custom.css" rel='stylesheet' type='text/css' />
+<link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Express News Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- web-fonts -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="../js/responsiveslides.min.js"></script>
+	<script>
+		$(function () {
+		  $("#slider").responsiveSlides({
+			auto: true,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			pager: true,
+		  });
+		});
+	</script>
+	<script type="text/javascript" src="../js/move-top.js"></script>
+<script type="text/javascript" src="../js/easing.js"></script>
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+</head>
+
+
+
+<body >
+	<!-- header-section-starts-here -->
+	<div class="header" >
+		
+		<div class="header-bottom">
+			<div class="logo text-center" >
+				<img src="../images/Polaris.png" class="logo1_width" />
+				<img src="../images/xgs_logo.png" class="logo2_width"/>
+			</div>
+			<div class="navigation">
+				<nav class="navbar navbar-default" role="navigation">
+		   <div class="wrap">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+			</div>
+			<!--/.navbar-header-->
+		
+			<div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1" style="text-align: center;margin-left: 12%">
+				<ul class="nav navbar-nav text-center" style="text-align: center;">
+					 <li ><a href="../index.html">主页</a></li>
+						<li><a href="#">新闻</a></li>
+				    <li><a  href="../faculty.html">研究团队</a></li>
+					<li><a class="active"  href="../publications.html">学术论文</a></li>
+					<li><a  href="../patents.html">发明专利</a></li>
+					<li><a href="../competition.html">学术竞赛</a></li>
+					  
+					<li><a href="../contact.html">联系我们</a></li>
+					<div class="clearfix"></div>
+				</ul>
+
+				</div>
+			</div>
+			<!--/.navbar-collapse-->
+	 <!--/.navbar-->
+			</div>
+		</nav>
+		</div>
+	</div>
+	<!-- header-section-ends-here -->
+
+
+
+    
+	<!-- content-section-starts-here -->
+	<div class="main-body" style="width: 80%; margin-left: 14%">
+		<div class="wrap">
+		<ol class="breadcrumb">
+        <li><a href="../publications.html">学术论文</a></li>
+        <li class="active">tip-shi-2023</li>
+      </ol>
+			<div class="col-md-10 ">
+				<div class="page__inner-wrap">
+
+<header>
+<h1 class="page__title" itemprop="headline">StochasticFormer: Stochastic Modeling for Weakly Supervised Temporal Action Localization</h1>
+
+
+<p> 
+<strong><i>IEEE Transactions on Image Processing. (TIP)</i></strong> 
+2023.02.11,
+</p>
+<p><a href=" ../faculty_tc/shihaichao.html">Haichao Shi</a>*,<a href=" ../faculty_tc/zhangxiaoyu.html">Xiao-Yu Zhang</a>,  Changsheng Li.</p>
+</header>
+
+<div class="plink">
+              <a href="" >[PDF]</a>
+              <a href="" >[DOI]</a>
+              <a href="" >[Bib] </a>
+            
+              </div>
+            </div>
+
+
+<section class="page__content">
+<h3 id="abstract">Abstract</h3>
+
+<p>Weakly supervised temporal action localization (WS-TAL) aims to identify the time intervals corresponding to actions of interest in untrimmed videos with video-level weak supervision. For most existing WS-TAL methods, two commonly encountered challenges are under-localization and overlocalization, which inevitably bring about severe performance deterioration. To address the issues, this paper proposes a transformer-structured stochastic process modeling framework, namely StochasticFormer, to fully investigate finer-grained interactions among the intermediate predictions to achieve further refined localization. StochasticFormer is built on a standard attention-based pipeline to derive preliminary frame/snippetlevel predictions. Then, the pseudo localization module generates variable-length pseudo action instances with the corresponding pseudo labels. Using the pseudo “action instance - action category” pairs as fine-grained pseudo supervision, the stochastic modeler aims to learn the underlying interaction among the intermediate predictions with an encoder-decoder network. The encoder consists of the deterministic and latent path to capture the local and global information, which are subsequently integrated by the decoder to obtain reliable predictions. The framework is optimized with three carefully designed losses, i.e. the video-level classification loss, the frame-level semantic coherence loss, and the ELBO loss. Extensive experiments on two benchmarks, i.e., THUMOS14 and ActivityNet1.2, have shown the efficacy of StochasticFormer compared with the state-of-theart methods.</p>
+
+</section>
+
+</div>
+
+
+		</div>
+
+
+					
+			
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- content-section-ends-here -->
+	<!-- footer-section-starts-here -->
+	<div class="footer">
+		<div class="footer-bottom">
+			<div class="wrap">
+				<div class="footer-social-icons col-md-6">
+					<ul>
+						<li><a class="facebook" href="#"></a></li>
+						<li><a class="twitter" href="#"></a></li>
+						<li><a class="flickr" href="#"></a></li>
+						<li><a class="googleplus" href="#"></a></li>
+						<li><a class="dribbble" href="#"></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- footer-section-ends-here -->
+	<script type="text/javascript">
+
+
+		$(document).ready(function() {			
+		$().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
+
+
+
+
+<a href="#to-top" id="toTop" > <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!---->
+
+
+</body>
+</html>
